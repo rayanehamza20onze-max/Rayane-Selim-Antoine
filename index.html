@@ -20,7 +20,6 @@
             --border: rgba(0, 0, 0, 0.05);
         }
 
-        /* Variables pour le Mode Sombre */
         body.dark-theme {
             --bg: #0b0f1a;
             --text: #f8fafc;
@@ -37,7 +36,6 @@
             line-height: 1.6;
         }
 
-        /* Bouton Dark Mode */
         #theme-toggle {
             position: fixed;
             top: 20px;
@@ -95,6 +93,7 @@
             padding: 35px;
             box-shadow: 0 10px 30px rgba(0,0,0,0.05);
             transition: 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            cursor: pointer; /* Ajout du curseur main */
         }
 
         .card:hover {
@@ -127,8 +126,6 @@
             transition: 0.3s;
             width: 100%;
         }
-
-        .btn-ia:hover { background: var(--primary-dark); opacity: 0.9; }
 
         #demo-box {
             margin-top: 20px;
@@ -166,7 +163,7 @@
             <p>Attention aux <strong>hallucinations</strong> : l'IA peut affirmer des faits faux avec une assurance totale. La vérification humaine reste vitale.</p>
         </div>
 
-        <div class="card">
+        <div class="card" style="cursor: default;">
             <div class="icon-box"><i class="fas fa-code"></i></div>
             <h2>Démo Temps Réel</h2>
             <p>Visualisez comment l'IA traite les données mot après mot (système de tokens).</p>
@@ -176,38 +173,12 @@
     </div>
 </div>
 
-<script>
-    // Gestion du Mode Sombre
-    const themeBtn = document.getElementById('theme-toggle');
-    themeBtn.addEventListener('click', () => {
-        document.body.classList.toggle('dark-theme');
-        themeBtn.innerHTML = document.body.classList.contains('dark-theme') ? '☀️' : '🌙';
-    });
-
-    // Simulation de l'IA
-    let isTyping = false;
-    function lancerDemo() {
-        if (isTyping) return;
-        isTyping = true;
-        const box = document.getElementById('demo-box');
-        box.style.display = 'block';
-        box.innerHTML = 'AI_ENGINE > ';
-        
-        const texte = "Analyse sémantique... Génération de réponse... OK. L'intelligence artificielle n'est pas magique, c'est de la statistique.";
-        let i = 0;
-
-        function type() {
-            if (i < texte.length) {
-                box.innerHTML += texte.charAt(i);
-                i++;
-                setTimeout(type, 40);
-            } else {
-                isTyping = false;
-            }
-        }
-        type();
-    }
-</script>
+<div id="modal-container" class="modal">
+    <div class="modal-content">
+        <span class="close-modal">&times;</span>
+        <div id="modal-body"></div>
+    </div>
+</div>
 
 <script src="script.js"></script>
 
