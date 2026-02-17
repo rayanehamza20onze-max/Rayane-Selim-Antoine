@@ -21,29 +21,32 @@
 
 <div class="container">
     <div class="grid">
-        <div class="card">
+        <div class="card" onclick="ouvrirModale('architecture')">
             <div class="icon-box"><i class="fas fa-brain"></i></div>
             <h2>Architecture GPT</h2>
-            <p>Le "Generative Pre-trained Transformer" utilise des milliards de paramètres pour prédire le mot le plus probable dans une phrase.</p>
+            <p>Découvrez OpenAI et comment le modèle prédit les mots grâce à des milliards de paramètres.</p>
         </div>
 
-        <div class="card">
+        <div class="card" onclick="ouvrirModale('limites')">
             <div class="icon-box"><i class="fas fa-eye-slash"></i></div>
             <h2>Limites & Biais</h2>
-            <p>Attention aux <strong>hallucinations</strong> : l'IA peut affirmer des faits faux avec une assurance totale. La vérification humaine reste vitale.</p>
+            <p>Analyse des réponses : des résultats impressionnants mais parfois totalement faux (hallucinations).</p>
         </div>
 
-        <div class="card" style="cursor: default;">
+        <div class="card" onclick="ouvrirModale('enjeux')">
+            <div class="icon-box"><i class="fas fa-shield-alt"></i></div>
+            <h2>Enjeux & Avenir</h2>
+            <p>Impact sur les métiers, cybercriminalité et utilisations intelligentes au lycée.</p>
+        </div>
+
+        <div class="card" style="cursor: default; grid-column: 1 / -1;">
             <div class="icon-box"><i class="fas fa-code"></i></div>
             <h2>Démo Temps Réel</h2>
             <p>Visualisez comment l'IA traite les données mot après mot (système de tokens).</p>
             <button class="btn-ia" onclick="lancerDemo()">Simuler un traitement IA</button>
             <div id="demo-box"></div>
         </div>
-    </div>
-</div>
-
-<div id="modal-container" class="modal">
+    </div> </div> <div id="modal-container" class="modal">
     <div class="modal-content">
         <span class="close-modal">&times;</span>
         <div id="modal-body"></div>
