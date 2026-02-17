@@ -4,10 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>IA Revolution | Rayane-Selim-Antoine</title>
-    
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -24,29 +22,30 @@
         <div class="card" onclick="ouvrirModale('architecture')">
             <div class="icon-box"><i class="fas fa-brain"></i></div>
             <h2>Architecture & Hardware</h2>
-            <p>Analyse des <strong>Data Centers</strong> de Microsoft Azure et de la puissance de calcul nécessaire : 25 000 puces <strong>NVIDIA H100</strong>. Découvrez le fonctionnement des vecteurs à 1536 dimensions et l'utilisation massive de l'algèbre linéaire pour prédire le langage.</p>
+            <p>Analyse des <strong>Data Centers</strong> de Microsoft Azure et des 25 000 puces <strong>NVIDIA H100</strong>. Découvrez le fonctionnement des vecteurs et l'entraînement assisté par les humains.</p>
         </div>
 
         <div class="card" onclick="ouvrirModale('limites')">
             <div class="icon-box"><i class="fas fa-eye-slash"></i></div>
             <h2>Prompting & Limites</h2>
-            <p>Maîtrisez l'art du <strong>Prompt Engineering</strong> (Rôle, Contexte, Contraintes) pour limiter les <strong>hallucinations</strong>. Étude de la confidentialité des données, des biais algorithmiques et de l'importance du contrôle humain sur les réponses générées.</p>
+            <p>Maîtrisez l'art du <strong>Prompt Engineering</strong> pour limiter les <strong>hallucinations</strong>. Étude des biais algorithmiques et des réponses parfois fausses de l'IA.</p>
         </div>
 
         <div class="card" onclick="ouvrirModale('enjeux')">
             <div class="icon-box"><i class="fas fa-shield-alt"></i></div>
             <h2>Enjeux & Futur</h2>
-            <p>Exploration des <strong>GPTs personnalisés</strong> et de la multimodalité (Vision/DALL-E). Analyse de l'impact sur les métiers de demain et des risques liés à la <strong>cybercriminalité</strong> automatisée et au phishing haute fidélité.</p>
+            <p>Exploration des dangers liés à la <strong>cybercriminalité</strong> et à la désinformation. Comment utiliser l'IA intelligemment au lycée au-delà de la triche.</p>
         </div>
 
         <div class="card" style="cursor: default; grid-column: 1 / -1;">
             <div class="icon-box"><i class="fas fa-code"></i></div>
             <h2>Démo Technique Temps Réel</h2>
-            <p>Visualisation en direct du processus de <strong>prédiction statistique</strong>. Observez comment le modèle transforme le langage humain en tokens numériques avant d'effectuer des milliards de multiplications de matrices par seconde pour trouver la réponse.</p>
+            <p>Visualisation du processus de prédiction statistique. Observez comment le modèle transforme le langage en tokens numériques.</p>
             <button class="btn-ia" onclick="lancerDemo()">Simuler un traitement IA</button>
             <div id="demo-box"></div>
         </div>
-    </div> </div>
+    </div>
+</div>
 
 <div id="modal-container" class="modal">
     <div class="modal-content">
@@ -56,6 +55,5 @@
 </div>
 
 <script src="script.js"></script>
-
 </body>
 </html>
