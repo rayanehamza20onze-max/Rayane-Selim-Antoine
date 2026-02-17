@@ -1,6 +1,6 @@
-// DARK MODE
+// MODE SOMBRE
 document.getElementById("darkModeBtn").onclick = () => {
-    document.body.classList.toggle("dark");
+    document.body.classList.toggle("dark-theme");
 };
 
 // MENU MOBILE
@@ -8,86 +8,84 @@ document.getElementById("menuToggle").onclick = () => {
     document.getElementById("menu").classList.toggle("active");
 };
 
-// SCROLL ANIMATION
-const observer = new IntersectionObserver(entries=>{
-    entries.forEach(entry=>{
-        if(entry.isIntersecting){
-            entry.target.classList.add("show");
-        }
+// ANIMATIONS D'APPARITION
+const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+        if(entry.isIntersecting) entry.target.classList.add("show");
     });
 });
-document.querySelectorAll(".hidden").forEach(el=>observer.observe(el));
+document.querySelectorAll(".hidden").forEach(el => observer.observe(el));
 
-// PARALLAX
-window.addEventListener("scroll", ()=>{
-    const scroll = window.scrollY;
-    document.querySelector(".parallax").style.transform =
-        `translateY(${scroll * 0.3}px)`;
-});
-
-// GRAPH ANIMÉ
+// GRAPHIQUE DES PARAMÈTRES (Puissance de l'IA)
 const canvas = document.getElementById("chart");
 if(canvas){
     const ctx = canvas.getContext("2d");
-    const data = [1,10,100];
+    const values = [10, 50, 175, 300]; // Représentation simplifiée
+    const labels = ["GPT-1", "GPT-2", "GPT-3", "GPT-4"];
     let progress = 0;
 
-    function animate(){
-        ctx.clearRect(0,0,700,400);
-        data.forEach((value,i)=>{
-            let height = value * 2 * progress;
+    function animateChart() {
+        ctx.clearRect(0, 0, 700, 400);
+        values.forEach((v, i) => {
             ctx.fillStyle = "#00ffd5";
-            ctx.fillRect(100 + i*150,350-height,80,height);
+            let h = v * progress;
+            ctx.fillRect(100 + i*150, 350 - h, 60, h);
+            ctx.fillStyle = "white";
+            ctx.fillText(labels[i], 110 + i*150, 370);
         });
-        if(progress < 1){
+        if(progress < 1) {
             progress += 0.02;
-            requestAnimationFrame(animate);
+            requestAnimationFrame(animateChart);
         }
     }
-    animate();
+    animateChart();
 }
 
-// QUIZ MULTI QUESTIONS
+// QUIZ COMPLET
 const quizData = [
     {
-        question:"ChatGPT comprend-il vraiment ?",
-        answers:["Oui","Non"],
-        correct:1
+        q: "ChatGPT comprend-il réellement vos phrases ?",
+        a: ["Oui, il est conscient", "Non, il prédit des probabilités"],
+        c: 1
     },
     {
-        question:"Sur quoi est basé ChatGPT ?",
-        answers:["Transformer","GPS","Blockchain"],
-        correct:0
+        q: "Quelle entreprise a créé ChatGPT ?",
+        a: ["Google", "OpenAI", "Microsoft"],
+        c: 1
+    },
+    {
+        q: "Comment appelle-t-on l'art de donner des instructions à l'IA ?",
+        a: ["Le Coding", "Le Prompting", "Le Phishing"],
+        c: 1
+    },
+    {
+        q: "Qu'est-ce qu'une 'hallucination' pour une IA ?",
+        a: ["Un virus informatique", "Une réponse inventée fausse", "Une panne de serveur"],
+        c: 1
     }
 ];
 
-let current = 0;
-let score = 0;
-
-function loadQuestion(){
-    if(current >= quizData.length){
-        document.getElementById("question").innerText =
-            "Quiz terminé ! Score : " + score + "/" + quizData.length;
-        document.getElementById("answers").innerHTML = "";
+let cur = 0, score = 0;
+function loadQuiz() {
+    const qEl = document.getElementById("question");
+    const aEl = document.getElementById("answers");
+    if(cur >= quizData.length) {
+        qEl.innerText = `Quiz terminé ! Votre score : ${score}/${quizData.length}`;
+        aEl.innerHTML = "";
         return;
     }
-
-    const q = quizData[current];
-    document.getElementById("question").innerText = q.question;
-
-    const answersDiv = document.getElementById("answers");
-    answersDiv.innerHTML = "";
-
-    q.answers.forEach((answer,index)=>{
-        const btn = document.createElement("button");
-        btn.innerText = answer;
-        btn.onclick = ()=>{
-            if(index === q.correct) score++;
-            current++;
-            loadQuestion();
+    const data = quizData[cur];
+    qEl.innerText = data.q;
+    aEl.innerHTML = "";
+    data.a.forEach((ans, i) => {
+        const b = document.createElement("button");
+        b.innerText = ans;
+        b.onclick = () => {
+            if(i === data.c) score++;
+            cur++;
+            loadQuiz();
         };
-        answersDiv.appendChild(btn);
+        aEl.appendChild(b);
     });
 }
-
-loadQuestion();
+loadQuiz();
