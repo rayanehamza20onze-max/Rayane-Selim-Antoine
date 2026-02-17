@@ -1,57 +1,96 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Révolution ChatGPT</title>
-<link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>La Révolution ChatGPT - Projet SNT 2026</title>
+    <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
 
 <header class="hero">
     <h1 class="parallax">La Révolution ChatGPT</h1>
-    <p>L’intelligence artificielle qui transforme le monde</p>
-    <button id="darkModeBtn">🌙 Mode sombre</button>
+    <p>L'intelligence artificielle qui transforme le monde (Dernière mise à jour : 05/01/2025)</p>
+    <button id="darkModeBtn">🌓 Changer de thème</button>
 </header>
 
 <nav>
-    <div class="logo">AI 2026</div>
+    <div class="logo"><strong>AI SNT 2026</strong></div>
     <div class="menu-toggle" id="menuToggle">☰</div>
     <div class="menu" id="menu">
         <a href="#presentation">Présentation</a>
-        <a href="#timeline">Chronologie</a>
-        <a href="#stats">Statistiques</a>
+        <a href="#technique">Fonctionnement</a>
+        <a href="#usages">Usages & Prompting</a>
+        <a href="#dangers">Dangers & Éthique</a>
         <a href="#quiz">Quiz</a>
     </div>
 </nav>
 
 <section id="presentation" class="hidden">
-    <h2>Présentation</h2>
+    <h2>1. Qu'est-ce que ChatGPT ?</h2>
     <div class="card">
-        ChatGPT est un modèle de langage basé sur l’architecture Transformer.
-        Il génère du texte en prédisant le mot suivant selon des probabilités.
+        <p>Lancé en novembre 2022 par <strong>OpenAI</strong>, ChatGPT est un agent conversationnel qui a atteint 100 millions d'utilisateurs en seulement 2 mois. Contrairement à un moteur de recherche qui cherche des liens, il <strong>génère</strong> des réponses originales.</p>
+        
+        <h3>Chronologie Rapide</h3>
+        <div class="timeline">
+            <div class="event"><strong>1950 :</strong> Test de Turing (La machine peut-elle penser ?)</div>
+            <div class="event"><strong>2017 :</strong> Invention de l'architecture <em>Transformer</em> par Google.</div>
+            <div class="event"><strong>2022 :</strong> Sortie de ChatGPT (Révolution grand public).</div>
+            <div class="event"><strong>2024 :</strong> AI Act (L'Europe régule l'intelligence artificielle).</div>
+        </div>
+        <p><small>Crédit Image : ChatGPT, Domaine public, via Wikimedia Commons.</small></p>
     </div>
 </section>
 
-<section id="timeline" class="hidden">
-    <h2>Chronologie</h2>
-    <div class="timeline">
-        <div class="event">1950 – Test de Turing</div>
-        <div class="event">2017 – Transformer</div>
-        <div class="event">2020 – GPT-3</div>
-        <div class="event">2022 – ChatGPT</div>
-        <div class="event">2024 – Régulation IA</div>
+<section id="technique" class="hidden">
+    <h2>2. Le Fonctionnement Technique</h2>
+    <div class="card">
+        <ul>
+            <li><strong>LLM (Large Language Model) :</strong> Entraîné sur des milliards de phrases (livres, web, code).</li>
+            <li><strong>Probabilité Statistique :</strong> Il ne "comprend" pas, il prédit le mot suivant le plus probable.</li>
+            <li><strong>Infrastructure :</strong> Tourne sur des supercalculateurs <strong>Microsoft Azure</strong> avec des puces <strong>NVIDIA H100</strong>.</li>
+            <li><strong>RLHF :</strong> Entraînement assisté par des humains pour corriger ses réponses.</li>
+        </ul>
+        <h3>Vidéo : Comment ça marche ?</h3>
+        <div class="video-container">
+            <iframe width="100%" height="315" src="https://www.youtube.com/embed/7ell8KEbhJo" frameborder="0" allowfullscreen></iframe>
+        </div>
+    </div>
+</section>
+
+<section id="usages" class="hidden">
+    <h2>3. L'Art du "Prompting" & Usages</h2>
+    <div class="card">
+        <p>Pour bien utiliser l'IA, il faut maîtriser le <strong>Prompting</strong> (l'art de donner des instructions) :</p>
+        <ul>
+            <li><strong>Le Rôle :</strong> "Agis en tant qu'expert en SNT".</li>
+            <li><strong>Le Contexte :</strong> Expliquer précisément la situation.</li>
+            <li><strong>Les Contraintes :</strong> Définir le ton, la longueur ou le format (tableau, liste).</li>
+        </ul>
+        <p><strong>À l'école :</strong> Au-delà de la triche, c'est un tuteur incroyable pour expliquer un cours mal compris ou générer des idées de projet.</p>
+    </div>
+</section>
+
+<section id="dangers" class="hidden">
+    <h2>4. Limites, Dangers et Éthique</h2>
+    <div class="card">
+        <p>⚠️ <strong>Attention aux Hallucinations :</strong> L'IA peut inventer des faits avec une assurance totale.</p>
+        <ul>
+            <li><strong>Biais :</strong> Elle peut reproduire des préjugés sexistes ou racistes présents dans ses données.</li>
+            <li><strong>Confidentialité :</strong> Ne jamais donner de données personnelles !</li>
+            <li><strong>Cybercriminalité :</strong> Risque de création facilitée de virus ou de mails de phishing (arnaques).</li>
+        </ul>
+        <p><strong>Impact sur les métiers :</strong> Journalisme, codeurs, traducteurs... les métiers évoluent mais l'humain doit rester le pilote.</p>
     </div>
 </section>
 
 <section id="stats" class="hidden">
-    <h2>Croissance</h2>
+    <h2>Statistiques de croissance</h2>
     <canvas id="chart" width="700" height="400"></canvas>
 </section>
 
 <section id="quiz" class="hidden">
-    <h2>Quiz IA</h2>
+    <h2>Quiz IA (Spécial SNT)</h2>
     <div class="card">
         <p id="question"></p>
         <div id="answers"></div>
@@ -60,7 +99,7 @@
 </section>
 
 <footer>
-Projet SNT 2026 – Site avancé IA
+    Projet SNT 2026 – Lycée Mounier, ANGERS – Licence Creative Commons
 </footer>
 
 <script src="script.js"></script>
