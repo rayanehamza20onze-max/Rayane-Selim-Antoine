@@ -1,59 +1,46 @@
-const quizData = [
-    {
-        q: "Que signifie LLM ?",
-        o: ["Large Language Model", "Long Logic Machine", "Low Level Mode"],
-        a: 0
-    },
-    {
-        q: "ChatGPT comprend-il réellement le sens des phrases ?",
-        o: ["Oui, il est conscient", "Non, c'est de la probabilité statistique"],
-        a: 1
-    },
-    {
-        q: "Quelle entreprise a créé ChatGPT ?",
-        a: 0,
-        o: ["OpenAI", "Google", "Microsoft"]
-    },
-    {
-        q: "Qu'est-ce qu'une hallucination d'IA ?",
-        o: ["Un virus informatique", "Une réponse fausse inventée avec assurance"],
-        a: 1
-    }
+// Fonction pour ouvrir/fermer les rectangles
+function toggleCard(card) {
+    card.classList.toggle('active');
+}
+
+// Système de Quiz
+const questions = [
+    { q: "Quelle entreprise a créé ChatGPT ?", a: ["Google", "OpenAI", "Microsoft"], c: 1 },
+    { q: "Sur quel modèle technique repose-t-il ?", a: ["Blockchain", "Transformer", "GPS"], c: 1 },
+    { q: "Qu'est-ce qu'une hallucination ?", a: ["Une erreur de serveur", "Une fausse info inventée"], c: 1 }
 ];
 
-let currentQuestion = 0;
+let cur = 0;
 let score = 0;
 
 function loadQuiz() {
-    const qEl = document.getElementById("question");
-    const oEl = document.getElementById("options");
-    const rEl = document.getElementById("result");
+    const qEl = document.getElementById("quiz-question");
+    const oEl = document.getElementById("quiz-options");
+    const rEl = document.getElementById("quiz-result");
 
-    if (currentQuestion >= quizData.length) {
-        qEl.innerText = "Quiz Terminé !";
+    if (cur >= questions.length) {
+        qEl.innerText = "Quiz terminé !";
         oEl.innerHTML = "";
-        rEl.innerText = `Votre score : ${score} / ${quizData.length}`;
+        rEl.innerText = `Score : ${score} / ${questions.length}`;
         return;
     }
 
-    const current = quizData[currentQuestion];
-    qEl.innerText = current.q;
+    const q = questions[cur];
+    qEl.innerText = q.q;
     oEl.innerHTML = "";
 
-    current.o.forEach((opt, index) => {
-        const btn = document.createElement("button");
-        btn.innerText = opt;
-        btn.onclick = () => checkAnswer(index);
-        oEl.appendChild(btn);
+    q.a.forEach((choice, i) => {
+        const b = document.createElement("button");
+        b.innerText = choice;
+        b.className = "quiz-btn";
+        b.onclick = (e) => {
+            e.stopPropagation(); // Empêche de fermer le rectangle en cliquant
+            if (i === q.c) score++;
+            cur++;
+            loadQuiz();
+        };
+        oEl.appendChild(b);
     });
-}
-
-function checkAnswer(idx) {
-    if (idx === quizData[currentQuestion].a) {
-        score++;
-    }
-    currentQuestion++;
-    loadQuiz();
 }
 
 document.addEventListener("DOMContentLoaded", loadQuiz);
