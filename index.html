@@ -3,57 +3,96 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SNT | La Révolution ChatGPT</title>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <title>Exposé 7 : La Révolution ChatGPT</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<button id="theme-toggle" title="Changer de mode">🌙</button>
+    <header class="main-header">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/0/04/ChatGPT_logo.svg" alt="Crédit : ChatGPT, Domaine public" class="header-logo">
+        <h1>La Révolution ChatGPT</h1>
+        <p>Par Rayane, Selim et Antoine • SNT 2026</p>
+    </header>
 
-<header>
-    <h1>La Révolution ChatGPT</h1>
-    <p>Par Rayane, Selim et Antoine • SNT Lycée Mounier</p>
-</header>
+    <main class="container">
+        <section class="cards-grid">
+            <div class="card" onclick="openModal('archi-modal')">
+                <span class="icon">🧠</span>
+                <h3>Architecture & Hardware</h3>
+                <p>Les serveurs Azure et les puces NVIDIA H100.</p>
+            </div>
 
-<div class="container">
-    <div class="grid">
-        <div class="card" onclick="ouvrirModale('architecture')">
-            <div class="icon-box"><i class="fas fa-brain"></i></div>
-            <h2>1. Présentation & IA</h2>
-            <p>Découvrez <strong>OpenAI</strong>, les données d'entraînement et le secret de la prédiction des mots par l'IA.</p>
+            <div class="card" onclick="openModal('prompt-modal')">
+                <span class="icon">🔍</span>
+                <h3>Prompting & Limites</h3>
+                <p>L'art de l'instruction et les hallucinations de l'IA.</p>
+            </div>
+
+            <div class="card" onclick="openModal('enjeux-modal')">
+                <span class="icon">🛡️</span>
+                <h3>Enjeux & Futur</h3>
+                <p>Éthique, cybercriminalité et impact sur les métiers.</p>
+            </div>
+        </section>
+
+        <div id="archi-modal" class="modal">
+            <div class="modal-content">
+                <span class="close" onclick="closeModal('archi-modal')">&times;</span>
+                <h2>Architecture & Hardware</h2>
+                <div class="detail-body">
+                    <p>ChatGPT n'est pas "dans le nuage" de façon abstraite. Il repose sur des **Data Centers** massifs appartenant à Microsoft Azure.</p>
+                    <ul>
+                        <li><strong>NVIDIA H100 :</strong> Plus de 25 000 puces ultra-puissantes pour l'entraînement.</li>
+                        <li><strong>Entraînement assisté :</strong> Utilisation du RLHF (Reinforcement Learning from Human Feedback) pour affiner les réponses.</li>
+                    </ul>
+                    
+                    <h3>Vidéo 1 : Fonctionnement Technique</h3>
+                    <div class="video-container">
+                        <iframe src="https://www.youtube.com/embed/7ell8KEbhJo" frameborder="0" allowfullscreen></iframe>
+                    </div>
+                </div>
+            </div>
         </div>
 
-        <div class="card" onclick="ouvrirModale('limites')">
-            <div class="icon-box"><i class="fas fa-eye-slash"></i></div>
-            <h2>2. Analyses & Biais</h2>
-            <p>Peut-il répondre à tout ? Analyse des <strong>hallucinations</strong> et des erreurs parfois impressionnantes.</p>
+        <div id="prompt-modal" class="modal">
+            <div class="modal-content">
+                <span class="close" onclick="closeModal('prompt-modal')">&times;</span>
+                <h2>L'Art du Prompting & Les Limites</h2>
+                <div class="detail-body">
+                    <p>Le <strong>Prompt Engineering</strong> est la clé pour éviter les réponses génériques.</p>
+                    
+                    <ul>
+                        <li><strong>Hallucinations :</strong> L'IA peut prédire des mots faux avec une assurance totale.</li>
+                        <li><strong>Biais :</strong> Le modèle reflète les préjugés des données web mondiales.</li>
+                    </ul>
+                    <h3>Vidéo 2 : Maîtriser le Prompting</h3>
+                    <div class="video-container">
+                        <iframe src="https://www.youtube.com/embed/RKtR-lSOq2g" frameborder="0" allowfullscreen></iframe>
+                    </div>
+                </div>
+            </div>
         </div>
 
-        <div class="card" onclick="ouvrirModale('enjeux')">
-            <div class="icon-box"><i class="fas fa-shield-alt"></i></div>
-            <h2>3. Éthique & Dangers</h2>
-            <p>Impact sur les métiers, <strong>cybercriminalité</strong> et l'usage intelligent au lycée au-delà de la triche.</p>
+        <div id="enjeux-modal" class="modal">
+            <div class="modal-content">
+                <span class="close" onclick="closeModal('enjeux-modal')">&times;</span>
+                <h2>Enjeux, Éthique et Cybercriminalité</h2>
+                <div class="detail-body">
+                    <p>L'IA change notre rapport au travail et à la sécurité.</p>
+                    
+                    <ul>
+                        <li><strong>Cybercriminalité :</strong> Risque de création de malwares automatisés.</li>
+                        <li><strong>Éducation :</strong> Utilisation intelligente au lycée au-delà de la triche.</li>
+                    </ul>
+                    <h3>Vidéo 3 : Pourquoi l'IA inquiète ?</h3>
+                    <div class="video-container">
+                        <iframe src="https://www.youtube.com/embed/8-9-7jOOn6U" frameborder="0" allowfullscreen></iframe>
+                    </div>
+                </div>
+            </div>
         </div>
+    </main>
 
-        <div class="card" style="cursor: default; grid-column: 1 / -1;">
-            <div class="icon-box"><i class="fas fa-code"></i></div>
-            <h2>Console de Prédiction</h2>
-            <p>Visualisez comment l'IA traite les informations en temps réel.</p>
-            <button class="btn-ia" onclick="lancerDemo()">Simuler un traitement</button>
-            <div id="demo-box"></div>
-        </div>
-    </div>
-</div>
-
-<div id="modal-container" class="modal">
-    <div class="modal-content">
-        <span class="close-modal">&times;</span>
-        <div id="modal-body"></div>
-    </div>
-</div>
-
-<script src="script.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
