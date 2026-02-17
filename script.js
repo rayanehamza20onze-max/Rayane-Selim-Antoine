@@ -1,85 +1,92 @@
-function ouvrirModale(type) {
-    const modal = document.getElementById('modal-container');
-    const body = document.getElementById('modal-body');
-    let contenu = "";
-    
-    modal.style.display = "block";
-    modal.scrollTop = 0; 
-
-    if (type === 'architecture') {
-        contenu = `
-            <div class="detail-text">
-                <h1>I. Présentation de ChatGPT</h1>
-                <p>ChatGPT est un agent conversationnel créé par la société <strong>OpenAI</strong> basée à San Francisco.</p>
-                <h3>Comment fonctionne cette IA ?</h3>
-                <ul>
-                    <li><strong>Données d'entraînement :</strong> Le modèle a analysé des milliards de textes (livres, web, code).</li>
-                    <li><strong>Le modèle prédit des mots :</strong> Il calcule statistiquement le mot suivant le plus probable.</li>
-                    <li><strong>Entraînement assisté :</strong> Des humains ont aidé à corriger l'IA pour la rendre plus fiable (RLHF).</li>
-                </ul>
-                <div class="video-container">
-                    <iframe src="https://www.youtube.com/embed/SlMAz4nk07U" allowfullscreen></iframe>
-                </div>
-            </div>`;
-    } 
-    else if (type === 'limites') {
-        contenu = `
-            <div class="detail-text">
-                <h1>II. Analyse des Réponses & Limites</h1>
-                <p>ChatGPT semble tout savoir, mais il possède des limites importantes.</p>
-                <h3>Peut-il répondre à tout ?</h3>
-                <ul>
-                    <li><strong>Hallucinations :</strong> Il peut affirmer des choses totalement fausses avec beaucoup d'assurance.</li>
-                    <li><strong>Les Biais :</strong> L'IA peut reproduire des préjugés sexistes ou racistes présents dans ses données de base.</li>
-                    <li><strong>Le Prompting :</strong> L'importance de savoir poser la question (contexte, rôle, contraintes).</li>
-                </ul>
-                <div class="video-container">
-                    <iframe src="https://www.youtube.com/embed/Q4Np2tlq2vc" allowfullscreen></iframe>
-                </div>
-            </div>`;
-    } 
-    else if (type === 'enjeux') {
-        contenu = `
-            <div class="detail-text">
-                <h1>III. Possibilités & Dangers</h1>
-                <h3>Aller au-delà de la triche</h3>
-                <p>Pour un élève, ChatGPT est un tuteur qui peut réexpliquer un cours de SNT mal compris ou aider à structurer un exposé.</p>
-                <h3>Éthique et Cybercriminalité</h3>
-                <ul>
-                    <li><strong>Manipulation :</strong> Risque de création massive de fausses informations (Fake News).</li>
-                    <li><strong>Dangers :</strong> La porte ouverte à la cybercriminalité (aide à la rédaction de mails de phishing).</li>
-                    <li><strong>Métiers :</strong> Transformation profonde de nombreux secteurs (journalisme, code, graphisme).</li>
-                </ul>
-                <img src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b" class="modal-img">
-            </div>`;
-    }
-    body.innerHTML = contenu;
+:root {
+    --primary: #10a37f; /* Vert ChatGPT */
+    --bg: #f0f2f5;
+    --dark: #202123;
 }
 
-// GESTION DE LA FERMETURE (CROIX + CLIC EXTERNE)
-document.addEventListener('click', function(e) {
-    const modal = document.getElementById('modal-container');
-    if (e.target.classList.contains('close-modal') || e.target === modal) {
-        modal.style.display = "none";
-        document.getElementById('modal-body').innerHTML = ""; // Coupe le son des vidéos
-    }
-});
+body {
+    font-family: 'Segoe UI', sans-serif;
+    background-color: var(--bg);
+    margin: 0;
+    color: var(--dark);
+}
 
-// MODE SOMBRE
-document.getElementById('theme-toggle').onclick = function() {
-    document.body.classList.toggle('dark-theme');
-    this.textContent = document.body.classList.contains('dark-theme') ? '☀️' : '🌙';
-};
+.main-header {
+    background: var(--primary);
+    color: white;
+    text-align: center;
+    padding: 3rem 1rem;
+    clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+}
 
-// DÉMO CONSOLE
-function lancerDemo() {
-    const box = document.getElementById('demo-box');
-    box.style.display = "block";
-    box.innerHTML = "> Connexion aux serveurs OpenAI... ";
-    const texte = "Analyse des tokens... Calcul de probabilité... Réponse générée.";
-    let i = 0;
-    function type() {
-        if (i < texte.length) { box.innerHTML += texte.charAt(i); i++; setTimeout(type, 30); }
-    }
-    type();
+.header-logo {
+    width: 60px;
+    filter: brightness(0) invert(1);
+}
+
+.cards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
+    max-width: 1100px;
+    margin: -50px auto 50px;
+    padding: 0 20px;
+}
+
+.card {
+    background: white;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-align: center;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(16, 163, 127, 0.2);
+}
+
+.icon { font-size: 3rem; display: block; margin-bottom: 10px; }
+
+/* MODALES */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0; top: 0;
+    width: 100%; height: 100%;
+    background-color: rgba(0,0,0,0.7);
+    backdrop-filter: blur(5px);
+}
+
+.modal-content {
+    background-color: white;
+    margin: 5% auto;
+    padding: 30px;
+    width: 80%;
+    max-width: 800px;
+    border-radius: 20px;
+    max-height: 85vh;
+    overflow-y: auto;
+}
+
+.close {
+    float: right;
+    font-size: 2rem;
+    cursor: pointer;
+}
+
+.video-container {
+    position: relative;
+    padding-bottom: 56.25%;
+    height: 0;
+    margin-top: 20px;
+}
+
+.video-container iframe {
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    border-radius: 10px;
 }
