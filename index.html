@@ -4,131 +4,206 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>IA Revolution | Rayane-Selim-Antoine</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
     <style>
         :root {
             --primary: #10a37f;
-            --dark: #1a1a1a;
-            --light: #f9f9f9;
-            --accent: #00ffcc;
+            --primary-dark: #0e8a6c;
+            --bg: #f1f5f9;
+            --text: #0f172a;
+            --card-bg: rgba(255, 255, 255, 0.8);
+            --border: rgba(0, 0, 0, 0.05);
+        }
+
+        /* Variables pour le Mode Sombre */
+        body.dark-theme {
+            --bg: #0b0f1a;
+            --text: #f8fafc;
+            --card-bg: rgba(30, 41, 59, 0.7);
+            --border: rgba(255, 255, 255, 0.1);
         }
 
         body {
-            font-family: 'Inter', sans-serif;
+            font-family: 'Plus Jakarta Sans', sans-serif;
             margin: 0;
-            background: var(--light);
-            color: var(--dark);
-            scroll-behavior: smooth;
+            background-color: var(--bg);
+            color: var(--text);
+            transition: background 0.3s, color 0.3s;
+            line-height: 1.6;
         }
 
-        /* Header avec dégradé animé */
+        /* Bouton Dark Mode */
+        #theme-toggle {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            z-index: 1000;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            border: none;
+            background: var(--primary);
+            color: white;
+            cursor: pointer;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            font-size: 1.2rem;
+            transition: transform 0.2s;
+        }
+
+        #theme-toggle:hover { transform: scale(1.1); }
+
         header {
-            background: linear-gradient(-45deg, #10a37f, #054d3b, #10a37f);
-            background-size: 400% 400%;
-            animation: gradient 15s ease infinite;
+            background: linear-gradient(135deg, #054d3b 0%, #10a37f 50%, #1ed760 100%);
+            background-size: 200% 200%;
+            animation: gradientShift 10s ease infinite;
             color: white;
             padding: 100px 20px;
             text-align: center;
-            clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+            clip-path: polygon(0 0, 100% 0, 100% 90%, 0 100%);
         }
 
-        @keyframes gradient {
+        @keyframes gradientShift {
             0% { background-position: 0% 50%; }
             50% { background-position: 100% 50%; }
             100% { background-position: 0% 50%; }
         }
 
-        .container { max-width: 1000px; margin: -50px auto 50px; padding: 20px; }
+        header h1 { font-size: 3rem; font-weight: 800; margin: 0; letter-spacing: -2px; }
 
-        /* Cartes sophistiquées */
+        .container {
+            max-width: 1100px;
+            margin: -40px auto 50px;
+            padding: 20px;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 25px;
+        }
+
         .card {
-            background: white;
-            border-radius: 15px;
-            padding: 30px;
-            margin-bottom: 30px;
+            background: var(--card-bg);
+            backdrop-filter: blur(12px);
+            border: 1px solid var(--border);
+            border-radius: 24px;
+            padding: 35px;
             box-shadow: 0 10px 30px rgba(0,0,0,0.05);
-            transition: transform 0.3s ease, border-color 0.3s ease;
-            border: 2px solid transparent;
+            transition: 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
         }
 
         .card:hover {
             transform: translateY(-10px);
             border-color: var(--primary);
+            box-shadow: 0 20px 40px rgba(16, 163, 127, 0.15);
         }
 
         .icon-box {
-            font-size: 2rem;
+            width: 50px;
+            height: 50px;
+            background: rgba(16, 163, 127, 0.1);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
             color: var(--primary);
-            margin-bottom: 15px;
+            margin-bottom: 20px;
         }
 
-        /* Bouton interactif */
         .btn-ia {
             background: var(--primary);
             color: white;
             border: none;
-            padding: 15px 30px;
-            border-radius: 50px;
+            padding: 14px 28px;
+            border-radius: 12px;
+            font-weight: 600;
             cursor: pointer;
-            font-weight: bold;
-            transition: all 0.3s;
+            transition: 0.3s;
+            width: 100%;
         }
 
-        .btn-ia:hover {
-            box-shadow: 0 0 20px var(--primary);
-            transform: scale(1.05);
-        }
+        .btn-ia:hover { background: var(--primary-dark); opacity: 0.9; }
 
         #demo-box {
             margin-top: 20px;
             padding: 15px;
-            background: #eee;
-            border-radius: 8px;
+            background: #000;
+            color: #00ffcc;
+            border-radius: 10px;
+            font-family: 'Courier New', monospace;
             display: none;
-            font-family: monospace;
+            font-size: 0.85rem;
+            min-height: 60px;
         }
     </style>
 </head>
 <body>
 
+<button id="theme-toggle" title="Changer de mode">🌙</button>
+
 <header>
     <h1>La Révolution ChatGPT</h1>
-    <p>Par Rayane, Selim et Antoine | Projet SNT 2026</p>
+    <p>Par Rayane, Selim et Antoine • SNT 2026</p>
 </header>
 
 <div class="container">
-    <div class="card">
-        <div class="icon-box"><i class="fas fa-brain"></i></div>
-        <h2>Fonctionnement Cognitif</h2>
-        <p>ChatGPT n'est pas un moteur de recherche, c'est un <strong>Transformer</strong>. Il utilise des réseaux de neurones pour traiter le langage naturel.</p>
-    </div>
+    <div class="grid">
+        <div class="card">
+            <div class="icon-box"><i class="fas fa-brain"></i></div>
+            <h2>Architecture GPT</h2>
+            <p>Le "Generative Pre-trained Transformer" utilise des milliards de paramètres pour prédire le mot le plus probable dans une phrase.</p>
+        </div>
 
-    <div class="card">
-        <div class="icon-box"><i class="fas fa-exclamation-triangle"></i></div>
-        <h2>Éthique et Vigilance</h2>
-        <p>Les <strong>hallucinations</strong> et les biais algorithmiques sont les limites majeures de cette technologie.</p>
-        <button class="btn-ia" onclick="lancerDemo()">Simuler une réponse IA</button>
-        <div id="demo-box"></div>
+        <div class="card">
+            <div class="icon-box"><i class="fas fa-eye-slash"></i></div>
+            <h2>Limites & Biais</h2>
+            <p>Attention aux <strong>hallucinations</strong> : l'IA peut affirmer des faits faux avec une assurance totale. La vérification humaine reste vitale.</p>
+        </div>
+
+        <div class="card">
+            <div class="icon-box"><i class="fas fa-code"></i></div>
+            <h2>Démo Temps Réel</h2>
+            <p>Visualisez comment l'IA traite les données mot après mot (système de tokens).</p>
+            <button class="btn-ia" onclick="lancerDemo()">Simuler un traitement IA</button>
+            <div id="demo-box"></div>
+        </div>
     </div>
 </div>
 
 <script>
+    // Gestion du Mode Sombre
+    const themeBtn = document.getElementById('theme-toggle');
+    themeBtn.addEventListener('click', () => {
+        document.body.classList.toggle('dark-theme');
+        themeBtn.innerHTML = document.body.classList.contains('dark-theme') ? '☀️' : '🌙';
+    });
+
+    // Simulation de l'IA
+    let isTyping = false;
     function lancerDemo() {
+        if (isTyping) return;
+        isTyping = true;
         const box = document.getElementById('demo-box');
         box.style.display = 'block';
-        const texte = "Analyse en cours... ChatGPT génère une réponse basée sur des probabilités statistiques...";
+        box.innerHTML = 'AI_ENGINE > ';
+        
+        const texte = "Analyse sémantique... Génération de réponse... OK. L'intelligence artificielle n'est pas magique, c'est de la statistique.";
         let i = 0;
-        box.innerHTML = "";
-        function taper() {
+
+        function type() {
             if (i < texte.length) {
                 box.innerHTML += texte.charAt(i);
                 i++;
-                setTimeout(taper, 50);
+                setTimeout(type, 40);
+            } else {
+                isTyping = false;
             }
         }
-        taper();
+        type();
     }
 </script>
 
