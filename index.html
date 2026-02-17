@@ -3,104 +3,118 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Exposé SNT : La révolution ChatGPT</title>
+    <title>Exposé SNT : La Révolution ChatGPT</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
 <header class="hero">
     <h1 class="parallax">La Révolution ChatGPT</h1>
-    <p>Dernière mise à jour : 05/01/2025</p>
-    <button id="darkModeBtn">🌙 Mode sombre</button>
+    <p>Dernière mise à jour le : 05/01/2025</p>
+    <button id="darkModeBtn">🌓 Mode Sombre/Clair</button>
 </header>
 
 <nav>
     <div class="logo">SNT 2026</div>
-    <div class="menu-toggle" id="menuToggle">☰</div>
-    <div class="menu" id="menu">
-        <a href="#presentation">Présentation</a>
-        <a href="#fonctionnement">Fonctionnement</a>
-        <a href="#analyse">Analyse</a>
-        <a href="#dangers">Dangers</a>
-        <a href="#ressources">Ressources</a>
-        <a href="#quiz">Quiz</a>
+    <div class="menu">
+        <a href="#card1">1. Introduction & Consignes</a>
+        <a href="#card2">2. Qu'est-ce que ChatGPT ?</a>
+        <a href="#card3">3. Analyse & Usages</a>
+        <a href="#card4">4. Dangers & Éthique</a>
+        <a href="#card5">5. Ressources complètes</a>
     </div>
 </nav>
 
-<section id="presentation" class="hidden">
-    <h2>Présentation de l'IA</h2>
-    <div class="card">
-        <p>ChatGPT est un agent conversationnel qui semble avoir réponse à tout, marquant un nouveau pas dans les progrès de l'IA. Il a été créé par la société <strong>OpenAI</strong>.</p>
-        <p><strong>Illustration :</strong> Crédit : ChatGPT, Domaine public, via Wikimedia Commons.</p>
-        <blockquote>"La vraie révolution n’est peut-être pas l’intelligence artificielle… mais la façon dont nous allons apprendre à vivre avec."</blockquote>
-    </div>
-</section>
+<main>
+    <section id="card1" class="hidden">
+        <h2>Carte 1 : Introduction et Consignes</h2>
+        <div class="card">
+            <p>ChatGPT, tout le monde en parle depuis fin 2022. L'accès au grand public de cet agent conversationnel, qui semble avoir réponse à tout, marque un nouveau pas dans les progrès de l'intelligence artificielle (IA) et pose énormément de questions. Mais qu'est-ce que réellement ChatGPT ? Comment fonctionne cette IA ? Comment peut-on l'utiliser intelligemment ? Faut-il s'en méfier ? Autant de questions sur lesquelles se pencher pour cet exposé !</p>
+            <hr>
+            <h3>Consignes du projet</h3>
+            <p>Vous travaillerez en trinôme. Un diaporama est à préparer et une présentation orale d'environ 10 minutes est attendue.</p>
+            <p>Le diaporama et la présentation doivent permettre de présenter et analyser : la société à l’origine, le fonctionnement, l'analyse des réponses, les possibilités offertes et les dangers potentiels.</p>
+        </div>
+    </section>
 
-<section id="fonctionnement" class="hidden">
-    <h2>Comment fonctionne ChatGPT ?</h2>
-    <div class="card">
-        <ul>
-            <li><strong>LLM (Large Language Model) :</strong> Entraîné sur des milliards de phrases issues du web et de livres.</li>
-            <li><strong>Probabilité Statistique :</strong> Il ne comprend pas le sens, il prédit le mot suivant le plus probable.</li>
-            <li><strong>Infrastructure :</strong> Fonctionne sur des supercalculateurs Microsoft Azure avec des puces NVIDIA H100.</li>
-            <li><strong>Entraînement :</strong> Utilise des données massives et un entraînement assisté par des humains.</li>
-        </ul>
-    </div>
-</section>
+    <section id="card2" class="hidden">
+        <h2>Carte 2 : Qu'est-ce que c'est et comment ça marche ?</h2>
+        <div class="card">
+            <p>ChatGPT est un agent conversationnel créé par OpenAI. Contrairement à un moteur de recherche, il ne cherche pas d'infos, il les génère.</p>
+            <h3>Le secret technique (Sous le capot) :</h3>
+            <ul>
+                <li><strong>LLM (Large Language Model) :</strong> C'est un modèle de langage entraîné sur des milliards de textes (phrases du web et de livres).</li>
+                <li><strong>Probabilité Statistique :</strong> Il ne "pense" pas et ne comprend pas le sens, il prédit le mot suivant le plus probable.</li>
+                <li><strong>Infrastructure :</strong> Fonctionne sur des supercalculateurs Microsoft Azure avec des puces NVIDIA H100.</li>
+                <li><strong>Fenêtre de Contexte :</strong> Sa capacité à se souvenir du début de votre conversation actuelle.</li>
+                <li><strong>Entraînement :</strong> Données d’entraînement, entraînement assisté par les humains, le modèle prédit des mots.</li>
+            </ul>
+        </div>
+    </section>
 
-<section id="analyse" class="hidden">
-    <h2>Analyse des réponses et Possibilités</h2>
-    <div class="card">
-        <h3>Peut-il répondre à tout ?</h3>
-        <p>Il donne des réponses impressionnantes, mais parfois complètement fausses (hallucinations). Il possède des limites et des biais basés sur ses données d'entraînement.</p>
-        <h3>Utilisations intelligentes</h3>
-        <ul>
-            <li>Aide aux devoirs (explications de méthodes).</li>
-            <li>Aide à la programmation et rédaction de mails.</li>
-            <li>Outil de brainstorming et de correction de textes.</li>
-        </ul>
-    </div>
-</section>
+    <section id="card3" class="hidden">
+        <h2>Carte 3 : Analyse des réponses et Usages</h2>
+        <div class="card">
+            <h3>Peut-il répondre à tout ?</h3>
+            <p>Des réponses parfois impressionnantes… mais parfois complètement fausses (hallucinations). Il faut trouver des exemples et tester soi-même les limites et les biais des réponses produites.</p>
+            <h3>L'Art du "Prompting" (L'Instruction) :</h3>
+            <p>C’est le thème central. Pour que ChatGPT soit efficace, il faut comprendre comment lui parler :</p>
+            <ul>
+                <li><strong>Le Rôle :</strong> Lui donner une identité ("Agis en tant qu'expert").</li>
+                <li><strong>Le Contexte :</strong> Lui expliquer la situation pour éviter les réponses génériques.</li>
+                <li><strong>Les Contraintes :</strong> Définir le ton, la longueur ou le format (tableau, liste, code).</li>
+            </ul>
+            <p><strong>À l'école :</strong> Aller au-delà de l'outil de triche : exemples d'utilisations intelligentes par les élèves (explications, brainstorming).</p>
+        </div>
+    </section>
 
-<section id="dangers" class="hidden">
-    <h2>Dangers et Éthique</h2>
-    <div class="card">
-        <ul>
-            <li><strong>Désinformation :</strong> Risque de manipulations et fausses informations.</li>
-            <li><strong>Cybercriminalité :</strong> Utilisation possible pour des arnaques ou du phishing.</li>
-            <li><strong>Impact sur les métiers :</strong> Transformation de secteurs comme le journalisme ou la traduction.</li>
-        </ul>
-    </div>
-</section>
+    <section id="card4" class="hidden">
+        <h2>Carte 4 : Les dangers potentiels et l'impact</h2>
+        <div class="card">
+            <ul>
+                <li><strong>Questions d’éthique :</strong> Qui est responsable ? Confidentialité : ne jamais partager de données sensibles ou personnelles.</li>
+                <li><strong>Manipulations :</strong> Possibles fausses informations et désinformation.</li>
+                <li><strong>Cybercriminalité :</strong> La porte ouverte à de nouvelles menaces.</li>
+                <li><strong>Impact sur les métiers :</strong> Comment l'IA transforme le travail.</li>
+                <li><strong>Biais :</strong> Le modèle peut refléter les préjugés présents dans les textes d’entraînement.</li>
+            </ul>
+        </div>
+    </section>
 
-<section id="ressources" class="hidden">
-    <h2>Ressources de l'exposé</h2>
-    <div class="card">
-        <h3>Vidéos conseillées</h3>
-        <ul>
-            <li><a href="https://youtu.be/7ell8KEbhJo">Ce qui se cache derrière ChatGPT (ScienceEtonnante)</a></li>
-            <li><a href="https://www.youtube.com/watch?v=ORp_S62I5S8">Comment fonctionne ChatGPT ? (INRIA)</a></li>
-        </ul>
-        <h3>Articles et Podcasts</h3>
-        <ul>
-            <li>Article du Monde : Pixels - Limites morales de l'IA.</li>
-            <li>Podcast Radio France : Les nouveaux enjeux de l’IA.</li>
-            <li>Magazine Epsiloon n°25 (CDI).</li>
-        </ul>
-    </div>
-</section>
+    <section id="card5" class="hidden">
+        <h2>Carte 5 : Ressources principales et en ligne</h2>
+        <div class="card">
+            <h3>🌍 Ressources en ligne :</h3>
+            <ul>
+                <li>Article lebigdata.fr : ChatGPT, le guide complet : pourquoi cette IA va changer le monde.</li>
+                <li>Article lemonde.fr (Pixels) : ChatGPT : on a testé les limites morales de l’IA.</li>
+                <li>Article eductive.ca : L'IA aux portes des établissements collégiaux.</li>
+            </ul>
+            <h3>📰 Presse papier & Podcasts :</h3>
+            <ul>
+                <li>Dossier Epsiloon n°25 (juillet 2023) et Télérama n°3816.</li>
+                <li>Podcast "Le Meilleur des mondes" (Radio France) : Les nouveaux enjeux de l’IA.</li>
+                <li>ScienceEtonnante : Ce qui se cache derrière le fonctionnement de ChatGPT.</li>
+            </ul>
+            <div class="video-container">
+                <iframe width="100%" height="315" src="https://www.youtube.com/embed/ORp_S62I5S8" frameborder="0" allowfullscreen></iframe>
+            </div>
+            <p><small>Illustration Crédit : ChatGPT, Domaine public, via Wikimedia Commons.</small></p>
+        </div>
+    </section>
 
-<section id="quiz" class="hidden">
-    <h2>Quiz : Testez vos connaissances</h2>
-    <div class="card">
-        <p id="question"></p>
-        <div id="answers"></div>
-        <p id="score"></p>
-    </div>
-</section>
+    <section id="quiz-section" class="hidden">
+        <h2>Quiz : Testez vos connaissances</h2>
+        <div class="card">
+            <p id="question"></p>
+            <div id="answers"></div>
+            <p id="score-display"></p>
+        </div>
+    </section>
+</main>
 
 <footer>
-    Les enseignants de SNT du lycée Mounier, ANGERS – Licence Creative Commons
+    Les enseignants de SNT du lycée Mounier, ANGERS - Licence Creative Commons
 </footer>
 
 <script src="script.js"></script>
