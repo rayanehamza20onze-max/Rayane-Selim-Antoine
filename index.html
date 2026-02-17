@@ -10,8 +10,6 @@
 </head>
 <body>
 
-<div style="display:none;">Crédit : ChatGPT, Domaine public, via Wikimedia Commons.</div>
-
 <button id="theme-toggle" title="Changer de mode">🌙</button>
 
 <header>
@@ -24,25 +22,24 @@
         <div class="card" onclick="ouvrirModale('architecture')">
             <div class="icon-box"><i class="fas fa-brain"></i></div>
             <h2>1. Présentation & IA</h2>
-            <p>Découvrez <strong>OpenAI</strong>, les données d'entraînement et le secret de la prédiction des mots par l'IA.</p>
+            <p>Découvrez <strong>OpenAI</strong>, le fonctionnement des <strong>Transformers</strong> et le secret des probabilités.</p>
         </div>
 
         <div class="card" onclick="ouvrirModale('limites')">
             <div class="icon-box"><i class="fas fa-eye-slash"></i></div>
             <h2>2. Analyses & Biais</h2>
-            <p>Peut-il répondre à tout ? Analyse des <strong>hallucinations</strong> et des erreurs impressionnantes.</p>
+            <p>Peut-il répondre à tout ? Focus sur les <strong>hallucinations</strong> et les limites du modèle.</p>
         </div>
 
         <div class="card" onclick="ouvrirModale('enjeux')">
             <div class="icon-box"><i class="fas fa-shield-alt"></i></div>
             <h2>3. Éthique & Dangers</h2>
-            <p>Impact sur les métiers, <strong>cybercriminalité</strong> et l'usage intelligent au lycée.</p>
+            <p>Cybercriminalité, impact sur les métiers et usage intelligent au lycée.</p>
         </div>
 
         <div class="card" style="cursor: default; grid-column: 1 / -1;">
             <div class="icon-box"><i class="fas fa-code"></i></div>
-            <h2>Console de Prédiction Temps Réel</h2>
-            <p>Visualisez comment l'IA traite les informations (Tokens & Probabilités).</p>
+            <h2>Console de Prédiction</h2>
             <button class="btn-ia" onclick="lancerDemo()">Simuler un traitement IA</button>
             <div id="demo-box"></div>
         </div>
