@@ -2,69 +2,85 @@ function ouvrirModale(type) {
     const modal = document.getElementById('modal-container');
     const body = document.getElementById('modal-body');
     let contenu = "";
+    modal.style.display = "block"; // Ouvre la fenêtre
     modal.scrollTop = 0; 
 
     if (type === 'architecture') {
         contenu = `
             <div class="detail-text">
-                <h1>I. Infrastructure & Puissance de Calcul</h1>
-                <p>Pour faire fonctionner une IA comme ChatGPT, il ne suffit pas d'un simple serveur. Il faut une infrastructure physique colossale qui redéfinit l'informatique moderne.</p>
-                
-                <h3>1. Les Data Centers : Des usines à données</h3>
-                <p>ChatGPT réside dans les serveurs de <strong>Microsoft Azure</strong>. Ces centres de données sont des bâtiments de plusieurs milliers de mètres carrés remplis de serveurs. L'entraînement de GPT-4 a nécessité une puissance de calcul si grande qu'elle a consommé autant d'énergie qu'une ville moyenne pendant plusieurs mois.</p>
-                
-                <h3>2. Le hardware : L'hégémonie de NVIDIA</h3>
-                <p>Le moteur de cette machine est le GPU (processeur graphique). OpenAI utilise des clusters de <strong>25 000 puces NVIDIA H100</strong>. Ces puces sont spécialisées dans le calcul parallèle massif, indispensable pour traiter les milliards de paramètres du modèle simultanément.</p>
-                
-                <h3>3. La stratégie d'autonomie (Puces "Maison")</h3>
-                <p>Sam Altman (CEO d'OpenAI) a pour projet de lever des milliards de dollars pour créer ses propres usines de semi-conducteurs. L'objectif ? Ne plus dépendre de NVIDIA et réduire la consommation électrique des puces pour rendre l'IA plus durable.</p>
-                
-                <img src="https://images.unsplash.com/photo-1558494949-ef010cbdcc48" class="modal-img">
-
-                <h3>4. La Fondation Mathématique : Algèbre Linéaire</h3>
-                <p>L'IA ne comprend pas le français. Elle transforme les mots en <strong>Vecteurs (Embeddings)</strong> dans un espace à 1536 dimensions. Chaque interaction est en réalité une série de <strong>multiplications de matrices</strong> géantes. C'est grâce à ces probabilités mathématiques que l'IA prédit le token (morceau de mot) suivant le plus logique.</p>
+                <h1>L'IA et OpenAI</h1>
+                <p>ChatGPT est un agent conversationnel créé par <strong>OpenAI</strong> (San Francisco).</p>
+                <h3>Le fonctionnement technique</h3>
+                <ul>
+                    <li><strong>Données d'entraînement :</strong> Le modèle a ingéré des milliards de textes pour apprendre à prédire le mot suivant.</li>
+                    <li><strong>Entraînement assisté :</strong> Des humains ont aidé à affiner les réponses pour les rendre plus naturelles.</li>
+                    <li><strong>Infrastructure :</strong> Utilise des milliers de puces <strong>NVIDIA H100</strong> et les Data Centers de Microsoft Azure.</li>
+                </ul>
+                <img src="https://images.unsplash.com/photo-1677442136019-21780ecad995" class="modal-img" style="width:100%; border-radius:10px;">
+                <h3>Vidéo : Comprendre le fonctionnement</h3>
+                <div class="video-container" style="margin-top:20px;">
+                    <iframe width="100%" height="315" src="https://www.youtube.com/embed/SlMAz4nk07U" frameborder="0" allowfullscreen></iframe>
+                </div>
             </div>`;
     } 
     else if (type === 'limites') {
         contenu = `
             <div class="detail-text">
-                <h1>II. L'Art du Prompting & Éthique</h1>
-                <p>Interagir avec une IA est devenu une compétence à part entière : le <strong>Prompt Engineering</strong>.</p>
-                
-                <h3>1. Les 3 Piliers d'une instruction réussie</h3>
+                <h1>Analyses et Limites</h1>
+                <p>L'IA peut produire des réponses impressionnantes, mais elle a des failles majeures.</p>
+                <h3>Limites et Biais</h3>
                 <ul>
-                    <li><strong>Le Rôle :</strong> Donner une identité à l'IA ("Agis en tant qu'expert en SNT") pour orienter son vocabulaire.</li>
-                    <li><strong>Le Contexte :</strong> Lui fournir les détails du problème ("Je prépare un exposé pour des élèves de seconde").</li>
-                    <li><strong>Les Contraintes :</strong> Préciser le format de sortie ("Réponds sous forme de tableau comparatif de 5 lignes").</li>
+                    <li><strong>Hallucinations :</strong> ChatGPT peut inventer des faits de manière très convaincante (réponses fausses).</li>
+                    <li><strong>Biais :</strong> Les réponses peuvent refléter des préjugés présents dans les données du web.</li>
                 </ul>
-
-                <h3>2. Vigilance et Hallucinations</h3>
-                <p>Le modèle est "génératif", ce qui signifie qu'il invente. S'il ne connaît pas une réponse, sa logique statistique peut le pousser à créer une <strong>hallucination</strong> : une fausse information présentée avec une assurance totale. Il est donc vital de toujours vérifier les sources.</p>
-
-                <h3>3. Confidentialité et Biais</h3>
-                <p>Chaque donnée envoyée peut être utilisée pour ré-entraîner les futurs modèles. Il existe aussi un risque de <strong>biais algorithmiques</strong> : l'IA peut refléter les préjugés (racisme, sexisme, clichés) présents dans les textes du web qu'elle a ingérés.</p>
+                <h3>Prompting</h3>
+                <p>L'art du "prompt" consiste à donner un rôle et un contexte précis pour limiter ces erreurs.</p>
+                <div class="video-container">
+                    <iframe width="100%" height="315" src="https://www.youtube.com/embed/Q4Np2tlq2vc" frameborder="0" allowfullscreen></iframe>
+                </div>
             </div>`;
     } 
     else if (type === 'enjeux') {
         contenu = `
             <div class="detail-text">
-                <h1>III. Fonctionnalités Avancées & Futur</h1>
-                <p>ChatGPT évolue pour devenir une "IA multimodale", capable de traiter bien plus que du simple texte.</p>
-                
-                <h3>1. Vision et Analyse de Données</h3>
-                <p>Grâce à l'analyse de données avancée, l'IA peut lire des fichiers <strong>Excel ou PDF</strong>, créer des graphiques en temps réel et même "voir" et décrire des images ou des photos grâce à des modèles comme DALL-E 3.</p>
-
-                <h3>2. Les GPTs Personnalisés : L'avenir de l'IA</h3>
-                <p>La grande révolution actuelle est la possibilité de créer des <strong>GPTs personnalisés</strong>. Ce sont des versions de ChatGPT spécialisées dans une tâche unique (ex: un correcteur de code, un assistant juridique, ou un créateur de logos) qui possèdent leurs propres bases de connaissances privées.</p>
-
-                <h3>3. Impact sur les Métiers et Cybercriminalité</h3>
-                <p>L'IA va transformer le marché du travail, automatisant les tâches répétitives mais créant aussi de nouveaux risques. En <strong>cybercriminalité</strong>, elle peut être détournée pour générer des codes malveillants ou des campagnes de phishing (hameçonnage) impossibles à distinguer d'un vrai mail.</p>
-                <img src="https://images.unsplash.com/photo-1675557009875-436f5954a608" class="modal-img">
+                <h1>Dangers et Avenir</h1>
+                <h3>Éthique et Cybercriminalité</h3>
+                <p>L'IA pose des questions sur la manipulation et la création massive de fausses informations. Elle peut aussi aider à la <strong>cybercriminalité</strong> (phishing).</p>
+                <h3>Utilisation intelligente au lycée</h3>
+                <p>Au-delà de la triche, c'est un tuteur pour expliquer des concepts complexes.</p>
+                <h3>Impact sur les métiers</h3>
+                <p>De nombreux secteurs (créatifs, techniques) voient leurs métiers transformés par l'IA.</p>
+                <img src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b" class="modal-img" style="width:100%; border-radius:10px;">
             </div>`;
     }
 
     body.innerHTML = contenu;
-    modal.style.display = "block";
 }
 
-// ... (Garde le reste du code pour la démo et le mode sombre)
+// GESTION DE LA FERMETURE (LA CROIX)
+document.addEventListener('click', function(e) {
+    if (e.target.classList.contains('close-modal')) {
+        document.getElementById('modal-container').style.display = "none";
+    }
+    // Ferme aussi si on clique en dehors de la fenêtre blanche
+    if (e.target.id === 'modal-container') {
+        e.target.style.display = "none";
+    }
+});
+
+// SIMULATION IA
+function lancerDemo() {
+    const box = document.getElementById('demo-box');
+    box.style.display = "block";
+    box.innerHTML = "> Analyse SNT en cours... ";
+    const texte = "Prédiction du mot suivant... Chargement des serveurs... OK. ChatGPT est prêt.";
+    let i = 0;
+    function type() {
+        if (i < texte.length) {
+            box.innerHTML += texte.charAt(i);
+            i++;
+            setTimeout(type, 30);
+        }
+    }
+    type();
+}
