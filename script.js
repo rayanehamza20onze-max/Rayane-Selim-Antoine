@@ -1,46 +1,49 @@
 // Fonction pour ouvrir/fermer les rectangles
-function toggleCard(card) {
-    card.classList.toggle('active');
+function toggleCard(element) {
+    // Ferme les autres si tu veux qu'un seul soit ouvert à la fois
+    const allCards = document.querySelectorAll('.card');
+    allCards.forEach(c => {
+        if(c !== element) c.classList.remove('active');
+    });
+    
+    element.classList.toggle('active');
 }
 
 // Système de Quiz
-const questions = [
-    { q: "Quelle entreprise a créé ChatGPT ?", a: ["Google", "OpenAI", "Microsoft"], c: 1 },
-    { q: "Sur quel modèle technique repose-t-il ?", a: ["Blockchain", "Transformer", "GPS"], c: 1 },
-    { q: "Qu'est-ce qu'une hallucination ?", a: ["Une erreur de serveur", "Une fausse info inventée"], c: 1 }
+const quizData = [
+    { q: "Qui a créé ChatGPT ?", a: ["OpenAI", "Google"], c: 0 },
+    { q: "L'IA peut-elle mentir ?", a: ["Oui (hallucinations)", "Non jamais"], c: 0 }
 ];
 
 let cur = 0;
 let score = 0;
 
-function loadQuiz() {
-    const qEl = document.getElementById("quiz-question");
-    const oEl = document.getElementById("quiz-options");
-    const rEl = document.getElementById("quiz-result");
+function runQuiz() {
+    const qEl = document.getElementById("question");
+    const oEl = document.getElementById("options");
 
-    if (cur >= questions.length) {
-        qEl.innerText = "Quiz terminé !";
+    if(cur >= quizData.length) {
+        qEl.innerText = "Quiz fini !";
         oEl.innerHTML = "";
-        rEl.innerText = `Score : ${score} / ${questions.length}`;
+        document.getElementById("score-text").innerText = `Score : ${score}/${quizData.length}`;
         return;
     }
 
-    const q = questions[cur];
-    qEl.innerText = q.q;
+    const d = quizData[cur];
+    qEl.innerText = d.q;
     oEl.innerHTML = "";
 
-    q.a.forEach((choice, i) => {
+    d.a.forEach((opt, i) => {
         const b = document.createElement("button");
-        b.innerText = choice;
+        b.innerText = opt;
         b.className = "quiz-btn";
-        b.onclick = (e) => {
-            e.stopPropagation(); // Empêche de fermer le rectangle en cliquant
-            if (i === q.c) score++;
+        b.onclick = () => {
+            if(i === d.c) score++;
             cur++;
-            loadQuiz();
+            runQuiz();
         };
         oEl.appendChild(b);
     });
 }
 
-document.addEventListener("DOMContentLoaded", loadQuiz);
+document.addEventListener("DOMContentLoaded", runQuiz);
