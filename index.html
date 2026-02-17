@@ -10,85 +10,98 @@
 
 <header class="hero">
     <h1>La Révolution ChatGPT</h1>
-    <p>Projet SNT 2026</p>
+    <p>Cliquez sur une section pour découvrir le contenu</p>
 </header>
 
 <main class="container">
-    <section class="card" id="presentation">
-        <h2>Présentation</h2>
-        <div class="content">
+    <section class="card" onclick="toggleCard(this)">
+        <div class="card-header">
+            <h2>1. Présentation</h2>
+            <p class="intro-text">Introduction, consignes, analyse des réponses et dangers potentiels.</p>
+        </div>
+        <div class="card-content">
             <p>ChatGPT, tout le monde en parle depuis fin 2022. L'accès au grand public de cet agent conversationnel, qui semble avoir réponse à tout, marque un nouveau pas dans les progrès de l'intelligence artificielle (IA) et pose énormément de questions. Mais qu'est-ce que réellement ChatGPT ? Comment fonctionne cette IA ? Comment peut-on l'utiliser intelligemment ? Faut-il s'en méfier ? Autant de questions sur lesquelles se pencher pour cet exposé !</p>
             <p><strong>Consignes :</strong> Vous travaillerez en trinôme. Un diaporama est à préparer et une présentation orale d'environ 10 minutes est attendue.</p>
-            
             <h3>Analyse des réponses</h3>
             <p>Peut-il répondre à tout ? Des réponses parfois impressionnantes… mais parfois complètement fausses (hallucinations). Le fait que l'IA puisse inventer des faits avec une assurance totale.</p>
-            <p><strong>L'Art du "Prompting" :</strong> C’est le thème central. Pour que ChatGPT soit efficace, il faut comprendre comment lui parler (Rôle, Contexte, Contraintes).</p>
-            
+            <p><strong>L'Art du "Prompting" :</strong> C’est le thème central. Pour que ChatGPT soit efficace, il faut comprendre comment lui parler (Le Rôle, Le Contexte, Les Contraintes).</p>
             <h3>Dangers et Éthique</h3>
             <ul>
-                <li><strong>Confidentialité :</strong> Ne jamais partager de données sensibles.</li>
-                <li><strong>Biais :</strong> Reflet des préjugés des textes d'entraînement.</li>
-                <li><strong>Manipulations :</strong> Fausses informations et cybercriminalité.</li>
-                <li><strong>Métiers :</strong> Analyse de l'évolution des secteurs professionnels.</li>
+                <li><strong>Confidentialité :</strong> Ne jamais partager de données sensibles ou personnelles.</li>
+                <li><strong>Biais :</strong> Le modèle peut refléter les préjugés présents dans les textes d'entraînement.</li>
+                <li><strong>Manipulations :</strong> Des possibles manipulations, fausses informations, la porte ouverte à la cybercriminalité ?</li>
+                <li><strong>Impact sur les métiers :</strong> Analyse de l'évolution des secteurs professionnels.</li>
             </ul>
-            <p><small>Crédit : ChatGPT, Domaine public, via Wikimedia Commons.</small></p>
         </div>
     </section>
 
-    <section class="card" id="fonctionnement">
-        <h2>Fonctionnement</h2>
-        <div class="content">
+    <section class="card" onclick="toggleCard(this)">
+        <div class="card-header">
+            <h2>2. Fonctionnement Technique</h2>
+            <p class="intro-text">Découvrez comment l'IA génère ses réponses et l'infrastructure utilisée.</p>
+        </div>
+        <div class="card-content">
             <p>ChatGPT est un agent conversationnel créé par OpenAI. Contrairement à un moteur de recherche, il ne cherche pas d'infos, il les génère.</p>
             <ul>
-                <li><strong>LLM (Large Language Model) :</strong> Entraîné sur des milliards de phrases.</li>
-                <li><strong>Probabilité Statistique :</strong> Il prédit le mot suivant le plus probable.</li>
-                <li><strong>Infrastructure :</strong> Supercalculateurs Microsoft Azure et puces NVIDIA H100.</li>
-                <li><strong>Fenêtre de Contexte :</strong> Capacité à se souvenir du début de la conversation.</li>
+                <li><strong>LLM (Large Language Model) :</strong> Entraîné sur des milliards de phrases du web et de livres.</li>
+                <li><strong>Probabilité Statistique :</strong> Il ne comprend pas le sens, il prédit le mot suivant le plus probable.</li>
+                <li><strong>Infrastructure :</strong> Fonctionne sur des supercalculateurs Microsoft Azure avec des puces NVIDIA H100.</li>
+                <li><strong>Données :</strong> Entraînement assisté par les humains, le modèle prédit des mots.</li>
+                <li><strong>Fenêtre de Contexte :</strong> Sa capacité à se souvenir du début de votre conversation actuelle.</li>
             </ul>
         </div>
     </section>
 
-    <section class="card" id="statistiques">
-        <h2>Statistiques & Performances</h2>
-        <div class="content">
+    <section class="card" onclick="toggleCard(this)">
+        <div class="card-header">
+            <h2>3. Statistiques & Performances</h2>
+            <p class="intro-text">Points forts et points faibles de l'intelligence artificielle générative.</p>
+        </div>
+        <div class="card-content">
             <div class="stats-grid">
                 <div class="stat-box">
                     <h4>Points Forts</h4>
                     <ul>
-                        <li>Rapidité de rédaction : 95%</li>
-                        <li>Polyglotte (50+ langues) : 90%</li>
-                        <li>Aide au code (Python/JS) : 85%</li>
+                        <li>Vitesse de génération élevée</li>
+                        <li>Polyvalence des tâches</li>
+                        <li>Aide à la rédaction et au code</li>
                     </ul>
                 </div>
                 <div class="stat-box">
                     <h4>Points Faibles</h4>
                     <ul>
-                        <li>Vérité des faits : 60%</li>
-                        <li>Logique mathématique : 55%</li>
-                        <li>Actualité en temps réel : 40%</li>
+                        <li>Hallucinations factuelles</li>
+                        <li>Consommation d'énergie</li>
+                        <li>Biais algorithmiques</li>
                     </ul>
                 </div>
             </div>
-            <p style="text-align:center; margin-top:10px;"><em>Données estimées basées sur les tests de fiabilité 2025-2026.</em></p>
         </div>
     </section>
 
-    <section class="card" id="ressources">
-        <h2>Ressources</h2>
-        <div class="content">
-            <p><strong>En ligne :</strong> Article lebigdata.fr (INSEE), lemonde.fr (Pixels), eductive.ca.</p>
-            <p><strong>Presse :</strong> Epsiloon n°25, Télérama n°3816, 01Net n°994.</p>
-            <p><strong>Audio/Vidéo :</strong> Podcast Radio France, Vidéos ScienceEtonnante et INRIA Flowers.</p>
+    <section class="card" onclick="toggleCard(this)">
+        <div class="card-header">
+            <h2>4. Ressources Principales</h2>
+            <p class="intro-text">Liens vers les articles, journaux, podcasts et vidéos pour l'exposé.</p>
+        </div>
+        <div class="card-content">
+            <p><strong>Ressources en ligne :</strong> Article lebigdata.fr (INSEE), Article lemonde.fr (Pixels), Article eductive.ca sur les utilisations au collège.</p>
+            <p><strong>Presse papier :</strong> Dossier magazine Epsiloon n°25 (juillet 2023), magazine Télérama n°3816 (4 mars 2023).</p>
+            <p><strong>Podcast :</strong> ChatGPT : les nouveaux enjeux de l’IA (Radio France).</p>
+            <p><strong>Vidéos :</strong> "Comment fonctionne ChatGPT ?" (INRIA Flowers) et "Ce qui se cache derrière le fonctionnement de ChatGPT" (ScienceEtonnante).</p>
         </div>
     </section>
 
-    <section class="card" id="quiz-container">
-        <h2>Quiz IA</h2>
-        <div class="content">
-            <div id="quiz">
-                <p id="question">Chargement du quiz...</p>
-                <div id="options"></div>
-                <p id="result"></p>
+    <section class="card" onclick="toggleCard(this)">
+        <div class="card-header">
+            <h2>5. Quiz Interactif</h2>
+            <p class="intro-text">Testez vos connaissances sur ChatGPT avec ce quiz multi-questions.</p>
+        </div>
+        <div class="card-content" onclick="event.stopPropagation()">
+            <div id="quiz-container">
+                <p id="quiz-question" style="font-weight: bold;"></p>
+                <div id="quiz-options"></div>
+                <p id="quiz-result"></p>
             </div>
         </div>
     </section>
