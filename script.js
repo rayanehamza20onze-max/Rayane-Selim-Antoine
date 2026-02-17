@@ -2,85 +2,79 @@ function ouvrirModale(type) {
     const modal = document.getElementById('modal-container');
     const body = document.getElementById('modal-body');
     let contenu = "";
-    modal.style.display = "block"; // Ouvre la fenêtre
+    
+    modal.style.display = "block";
     modal.scrollTop = 0; 
 
     if (type === 'architecture') {
         contenu = `
             <div class="detail-text">
-                <h1>L'IA et OpenAI</h1>
-                <p>ChatGPT est un agent conversationnel créé par <strong>OpenAI</strong> (San Francisco).</p>
+                <h1>I. L'IA et OpenAI</h1>
+                <p>ChatGPT est un agent conversationnel créé par <strong>OpenAI</strong>. Ce n'est pas une base de données, mais un moteur de prédiction statistique.</p>
                 <h3>Le fonctionnement technique</h3>
                 <ul>
-                    <li><strong>Données d'entraînement :</strong> Le modèle a ingéré des milliards de textes pour apprendre à prédire le mot suivant.</li>
-                    <li><strong>Entraînement assisté :</strong> Des humains ont aidé à affiner les réponses pour les rendre plus naturelles.</li>
-                    <li><strong>Infrastructure :</strong> Utilise des milliers de puces <strong>NVIDIA H100</strong> et les Data Centers de Microsoft Azure.</li>
+                    <li><strong>Données d'entraînement :</strong> Le modèle a ingéré des milliards de textes pour apprendre la logique du langage.</li>
+                    <li><strong>Entraînement assisté (RLHF) :</strong> Des humains ont aidé à affiner les réponses pour les rendre plus naturelles.</li>
+                    <li><strong>Infrastructure :</strong> Utilise des processeurs <strong>NVIDIA H100</strong> via Microsoft Azure.</li>
                 </ul>
-                <img src="https://images.unsplash.com/photo-1677442136019-21780ecad995" class="modal-img" style="width:100%; border-radius:10px;">
-                <h3>Vidéo : Comprendre le fonctionnement</h3>
-                <div class="video-container" style="margin-top:20px;">
-                    <iframe width="100%" height="315" src="https://www.youtube.com/embed/SlMAz4nk07U" frameborder="0" allowfullscreen></iframe>
+                <img src="https://images.unsplash.com/photo-1677442136019-21780ecad995" class="modal-img">
+                <h3>Vidéo : Fonctionnement de l'IA</h3>
+                <div class="video-container">
+                    <iframe src="https://www.youtube.com/embed/SlMAz4nk07U" allowfullscreen></iframe>
                 </div>
             </div>`;
     } 
     else if (type === 'limites') {
         contenu = `
             <div class="detail-text">
-                <h1>Analyses et Limites</h1>
-                <p>L'IA peut produire des réponses impressionnantes, mais elle a des failles majeures.</p>
-                <h3>Limites et Biais</h3>
+                <h1>II. Analyses et Limites</h1>
+                <p>L'IA a des failles majeures qu'il faut savoir identifier.</p>
+                <h3>Hallucinations et Biais</h3>
                 <ul>
-                    <li><strong>Hallucinations :</strong> ChatGPT peut inventer des faits de manière très convaincante (réponses fausses).</li>
-                    <li><strong>Biais :</strong> Les réponses peuvent refléter des préjugés présents dans les données du web.</li>
+                    <li><strong>Hallucinations :</strong> L'IA peut inventer des faits faux avec une assurance totale.</li>
+                    <li><strong>Biais :</strong> Elle peut refléter les préjugés présents dans les textes du web.</li>
                 </ul>
-                <h3>Prompting</h3>
-                <p>L'art du "prompt" consiste à donner un rôle et un contexte précis pour limiter ces erreurs.</p>
+                <h3>Le Prompting</h3>
+                <p>L'art de donner des instructions précises pour obtenir des résultats fiables.</p>
                 <div class="video-container">
-                    <iframe width="100%" height="315" src="https://www.youtube.com/embed/Q4Np2tlq2vc" frameborder="0" allowfullscreen></iframe>
+                    <iframe src="https://www.youtube.com/embed/Q4Np2tlq2vc" allowfullscreen></iframe>
                 </div>
             </div>`;
     } 
     else if (type === 'enjeux') {
         contenu = `
             <div class="detail-text">
-                <h1>Dangers et Avenir</h1>
-                <h3>Éthique et Cybercriminalité</h3>
-                <p>L'IA pose des questions sur la manipulation et la création massive de fausses informations. Elle peut aussi aider à la <strong>cybercriminalité</strong> (phishing).</p>
+                <h1>III. Dangers et Avenir</h1>
+                <h3>Cybercriminalité et Éthique</h3>
+                <p>L'IA peut aider à la création de mails de <strong>phishing</strong> ou de fausses informations.</p>
                 <h3>Utilisation intelligente au lycée</h3>
                 <p>Au-delà de la triche, c'est un tuteur pour expliquer des concepts complexes.</p>
-                <h3>Impact sur les métiers</h3>
-                <p>De nombreux secteurs (créatifs, techniques) voient leurs métiers transformés par l'IA.</p>
-                <img src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b" class="modal-img" style="width:100%; border-radius:10px;">
+                <img src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b" class="modal-img">
             </div>`;
     }
-
     body.innerHTML = contenu;
 }
 
-// GESTION DE LA FERMETURE (LA CROIX)
 document.addEventListener('click', function(e) {
-    if (e.target.classList.contains('close-modal')) {
-        document.getElementById('modal-container').style.display = "none";
-    }
-    // Ferme aussi si on clique en dehors de la fenêtre blanche
-    if (e.target.id === 'modal-container') {
-        e.target.style.display = "none";
+    const modal = document.getElementById('modal-container');
+    if (e.target.classList.contains('close-modal') || e.target === modal) {
+        modal.style.display = "none";
+        document.getElementById('modal-body').innerHTML = ""; 
     }
 });
 
-// SIMULATION IA
+document.getElementById('theme-toggle').onclick = function() {
+    document.body.classList.toggle('dark-theme');
+    this.textContent = document.body.classList.contains('dark-theme') ? '☀️' : '🌙';
+};
+
 function lancerDemo() {
     const box = document.getElementById('demo-box');
-    box.style.display = "block";
-    box.innerHTML = "> Analyse SNT en cours... ";
-    const texte = "Prédiction du mot suivant... Chargement des serveurs... OK. ChatGPT est prêt.";
+    box.style.display = "block"; box.innerHTML = "> Analyse SNT en cours... ";
+    const texte = "Prédiction statistique... Calcul des matrices... OK.";
     let i = 0;
     function type() {
-        if (i < texte.length) {
-            box.innerHTML += texte.charAt(i);
-            i++;
-            setTimeout(type, 30);
-        }
+        if (i < texte.length) { box.innerHTML += texte.charAt(i); i++; setTimeout(type, 30); }
     }
     type();
 }
