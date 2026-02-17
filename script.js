@@ -1,85 +1,103 @@
-const contentData = {
-    presentation: {
-        title: "Présentation & Analyse",
-        text: `
-            <p>ChatGPT est un agent conversationnel qui marque un pas majeur dans l'IA depuis fin 2022. Créé par OpenAI, il semble avoir réponse à tout et pose énormément de questions.</p>
-            <p><strong>Consignes :</strong> Présentation orale de 10 min en trinôme avec diaporama.</p>
-            <h3>Analyse des réponses</h3>
-            <p>Peut-il répondre à tout ? Attention aux hallucinations (faits inventés avec assurance). L'art du "Prompting" est central : il faut définir le Rôle, le Contexte et les Contraintes.</p>
-            <h3>Dangers et Éthique</h3>
-            <p>Confidentialité : ne jamais partager de données sensibles. Biais : le modèle reflète les préjugés de ses données. Risques : manipulations et cybercriminalité.</p>
-            <p><small>Crédit : ChatGPT, Domaine public, via Wikimedia Commons.</small></p>`,
-        img: "https://upload.wikimedia.org/wikipedia/commons/thumb/0/04/ChatGPT_logo.svg/1024px-ChatGPT_logo.svg.png",
-        video: "https://www.youtube.com/embed/ORp_S62I5S8"
-    },
-    fonctionnement: {
-        title: "Le Fonctionnement Technique",
-        text: `
-            <p>Contrairement à un moteur de recherche, il génère les infos au lieu de les chercher.</p>
-            <ul>
-                <li><strong>LLM (Large Language Model) :</strong> Entraîné sur des milliards de phrases.</li>
-                <li><strong>Probabilité Statistique :</strong> Prédit le mot suivant le plus probable.</li>
-                <li><strong>Infrastructure :</strong> Supercalculateurs Microsoft Azure et puces NVIDIA H100.</li>
-                <li><strong>Fenêtre de Contexte :</strong> Capacité de mémoire de la conversation actuelle.</li>
-            </ul>`,
-        img: "https://upload.wikimedia.org/wikipedia/commons/thumb/9/91/Transformer_full.png/500px-Transformer_full.png",
-        video: "https://www.youtube.com/embed/7ell8KEbhJo"
-    },
-    statistiques: {
-        title: "Statistiques & Performances",
-        text: `
-            <p>Points forts et points faibles de l'IA en 2026 :</p>
-            <ul>
-                <li><strong>Rapidité de rédaction :</strong> 95%</li>
-                <li><strong>Polyvalence :</strong> 90%</li>
-                <li><strong>Fiabilité factuelle :</strong> 60% (Point faible)</li>
-                <li><strong>Logique pure :</strong> 55%</li>
-            </ul>`,
-        img: "https://images.unsplash.com/photo-1551288049-bbda4833effb?auto=format&fit=crop&w=800",
-        video: "https://www.youtube.com/embed/S_8qM9vL7iQ"
-    },
-    ressources: {
-        title: "Ressources Principales",
-        text: `
-            <p><strong>Ressources en ligne :</strong> Article lebigdata.fr, Article lemonde.fr (Pixels), eductive.ca.</p>
-            <p><strong>Presse papier :</strong> Dossier Epsiloon n°25, Télérama n°3816.</p>
-            <p><strong>Podcast :</strong> Le Meilleur des mondes (Radio France).</p>`,
-        img: "https://images.unsplash.com/photo-1507842217343-583bb7270b66?auto=format&fit=crop&w=800",
-        video: "https://www.youtube.com/embed/NnS8V2m_6P0"
-    },
-    quiz: {
-        title: "Quiz Interactif",
-        text: "<p>Répondez aux questions pour tester vos connaissances.</p><div id='quiz-zone'></div>",
-        img: "https://images.unsplash.com/photo-1543269664-76bc3997d9ea?auto=format&fit=crop&w=800",
-        video: ""
-    }
-};
-
-function openModal(id) {
-    const data = contentData[id];
-    const modal = document.getElementById("fullScreenModal");
-    const body = document.getElementById("modal-body");
-
-    let mediaHTML = data.img ? `<div class='modal-media'><img src='${data.img}'></div>` : "";
-    let videoHTML = data.video ? `<div class='video-wrapper'><iframe src='${data.video}' frameborder='0' allowfullscreen></iframe></div>` : "";
-
-    body.innerHTML = `
-        <h2>${data.title}</h2>
-        ${mediaHTML}
-        <div class='text-content'>${data.text}</div>
-        ${videoHTML}
-    `;
-
-    modal.style.display = "block";
-    document.body.style.overflow = "hidden"; 
+body {
+    background-color: #0a0a0a;
+    color: #ffffff;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
 }
 
-function closeModal() {
-    document.getElementById("fullScreenModal").style.display = "none";
-    document.body.style.overflow = "auto";
-    document.getElementById("modal-body").innerHTML = ""; 
+.hero {
+    text-align: center;
+    padding: 60px 20px;
+    background: linear-gradient(135deg, #000000, #004d40);
+    border-bottom: 1px solid #333;
 }
 
-window.onclick = function(event) {
-    if (event.target == document.getElementById("fullScreenModal")) closeModal();
-};
+h1 { color: #00ffd5; font-size: 2.5rem; margin: 0; }
+
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+    padding: 50px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* RECTANGLES */
+.card {
+    background: #181818;
+    width: 280px;
+    padding: 40px 20px;
+    border-radius: 20px;
+    border: 1px solid #333;
+    text-align: center;
+    cursor: pointer;
+    transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    border-color: #00ffd5;
+    box-shadow: 0 10px 30px rgba(0, 255, 213, 0.15);
+}
+
+.icon { font-size: 4rem; display: block; margin-bottom: 20px; }
+h2 { color: #00ffd5; margin-bottom: 10px; }
+
+/* MODALE PLEIN ÉCRAN */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 9999;
+    left: 0; top: 0;
+    width: 100%; height: 100%;
+    background-color: #0a0a0a;
+    overflow-y: auto;
+}
+
+.modal-header {
+    padding: 20px 40px;
+    display: flex;
+    justify-content: flex-end;
+    position: sticky;
+    top: 0;
+    background: #0a0a0a;
+    z-index: 10;
+}
+
+.close-btn {
+    background: #ff3e3e;
+    color: white;
+    border: none;
+    padding: 12px 30px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.close-btn:hover { background: #ff0000; transform: scale(1.05); }
+
+.modal-content {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 20px 40px 100px 40px;
+}
+
+.modal-content h2 { font-size: 3rem; margin-bottom: 30px; border-bottom: 2px solid #00ffd5; padding-bottom: 10px; }
+.modal-content p, .modal-content li { font-size: 1.2rem; line-height: 1.8; color: #ddd; }
+
+/* MEDIAS */
+.modal-media img { width: 100%; border-radius: 15px; margin: 30px 0; border: 1px solid #444; }
+.video-box { position: relative; padding-bottom: 56.25%; height: 0; margin-top: 30px; }
+.video-box iframe { position: absolute; top:0; left:0; width:100%; height:100%; border-radius: 15px; }
+
+/* QUIZ */
+.quiz-opt {
+    display: block; width: 100%; padding: 18px; margin: 12px 0;
+    background: #222; color: white; border: 1px solid #00ffd5; border-radius: 12px; cursor: pointer; text-align: left; font-size: 1.1rem;
+}
+.quiz-opt:hover { background: #00ffd5; color: #000; font-weight: bold; }
