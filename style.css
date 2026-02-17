@@ -1,96 +1,81 @@
 body {
     margin: 0;
     font-family: 'Segoe UI', sans-serif;
-    background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+    background: #0f0f0f;
     color: white;
     scroll-behavior: smooth;
     transition: 0.4s;
 }
 
-header {
+.hero {
+    height: 90vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(120deg,#0f2027,#203a43,#2c5364);
     text-align: center;
-    padding: 60px 20px;
+}
+
+.parallax {
+    font-size: 3rem;
+    transition: transform 0.2s;
 }
 
 nav {
-    text-align: center;
-    padding: 15px;
-    background: rgba(0,0,0,0.3);
+    display: flex;
+    justify-content: space-between;
+    padding: 15px 30px;
+    background: rgba(0,0,0,0.6);
+    position: sticky;
+    top: 0;
     backdrop-filter: blur(10px);
 }
 
-nav a {
-    color: white;
+.menu a {
     margin: 0 15px;
     text-decoration: none;
-    font-weight: bold;
+    color: white;
 }
 
-section {
-    padding: 60px 20px;
-    max-width: 900px;
-    margin: auto;
-}
-
-h2 {
-    text-align: center;
-    margin-bottom: 40px;
-}
-
-/* GLASS EFFECT */
-
-.timeline, .quiz-box {
-    background: rgba(255,255,255,0.1);
-    padding: 30px;
-    border-radius: 15px;
-    backdrop-filter: blur(15px);
-}
-
-/* TIMELINE */
-
-.timeline {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-}
-
-.event {
-    padding: 15px;
-    border-left: 4px solid #00ffd5;
-    transition: 0.3s;
-}
-
-.event:hover {
-    transform: translateX(10px);
-    color: #00ffd5;
-}
-
-/* QUIZ */
-
-.quiz-box button {
-    margin: 10px;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
+.menu-toggle {
+    display: none;
     cursor: pointer;
 }
 
+section {
+    padding: 80px 20px;
+    max-width: 1000px;
+    margin: auto;
+}
+
+.card {
+    background: rgba(255,255,255,0.05);
+    padding: 30px;
+    border-radius: 15px;
+    backdrop-filter: blur(20px);
+}
+
+.timeline .event {
+    padding: 15px;
+    border-left: 3px solid #00ffd5;
+    margin-bottom: 15px;
+}
+
 button {
+    padding: 10px 18px;
+    margin: 10px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
     background: #00ffd5;
-    color: black;
     font-weight: bold;
 }
 
-button:hover {
-    transform: scale(1.05);
-}
-
-/* ANIMATIONS */
-
 .hidden {
     opacity: 0;
-    transform: translateY(40px);
-    transition: all 0.8s ease;
+    transform: translateY(50px);
+    transition: 1s;
 }
 
 .show {
@@ -98,8 +83,37 @@ button:hover {
     transform: translateY(0);
 }
 
-/* DARK MODE */
+footer {
+    text-align: center;
+    padding: 30px;
+    background: #111;
+}
+
+/* Responsive */
+
+@media (max-width:768px){
+    .menu {
+        display: none;
+        flex-direction: column;
+        background: #111;
+        position: absolute;
+        top: 60px;
+        right: 20px;
+        padding: 20px;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+
+    .menu.active {
+        display: flex;
+    }
+}
+
+/* Dark Mode */
 
 .dark {
-    background: #121212;
+    background: #f5f5f5;
+    color: black;
 }
