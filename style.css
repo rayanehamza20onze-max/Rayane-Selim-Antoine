@@ -1,85 +1,102 @@
 body {
-    background-color: #0a0a0a;
-    color: #e0e0e0;
+    background-color: #f0f2f5;
     font-family: 'Segoe UI', sans-serif;
     margin: 0;
-    padding: 0;
-}
-
-.hero {
-    text-align: center;
-    padding: 40px;
-    background: #111;
-}
-
-h1 { color: #00ffd5; }
-
-.container {
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 20px;
 }
 
-/* STYLE DES CARTES CLIQUABLES */
+.hero {
+    background: #00a884; /* Couleur verte comme sur ta photo */
+    color: white;
+    width: 100%;
+    text-align: center;
+    padding: 60px 0;
+    margin-bottom: 40px;
+    clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+}
+
+.container {
+    width: 90%;
+    max-width: 600px;
+}
+
+/* LE RECTANGLE (FERMÉ) */
 .card {
-    background: #181818;
-    width: 95%;
-    max-width: 850px;
+    background: white;
     margin-bottom: 20px;
+    border-radius: 15px;
     padding: 20px;
-    border-radius: 12px;
-    border: 1px solid #333;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
     cursor: pointer;
-    transition: 0.3s;
+    transition: all 0.3s ease;
     overflow: hidden;
+    text-align: center;
 }
 
-.card:hover { border-color: #00ffd5; }
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+}
 
 .card-header h2 {
-    color: #00ffd5;
-    margin: 0;
-    font-size: 1.4rem;
+    margin: 10px 0;
+    color: #333;
 }
 
-.intro-text {
-    margin: 10px 0 0 0;
-    color: #aaa;
-    font-style: italic;
+.icon {
+    font-size: 2.5rem;
+    display: block;
 }
 
-/* CACHÉ PAR DÉFAUT */
+/* CONTENU CACHÉ */
 .card-content {
     display: none;
-    margin-top: 20px;
     padding-top: 20px;
-    border-top: 1px solid #333;
-    cursor: default;
+    border-top: 1px solid #eee;
+    text-align: left;
 }
 
-/* QUAND LA CARTE EST OUVERTE */
+/* QUAND ON CLIQUE */
 .card.active {
-    background: #222;
+    cursor: default;
 }
 
 .card.active .card-content {
     display: block;
 }
 
-.stats-grid { display: flex; gap: 20px; }
-.stat-box { background: #111; padding: 15px; border-radius: 8px; flex: 1; border: 1px solid #00ffd5; }
+/* MÉDIA */
+.media-container img {
+    width: 100%;
+    border-radius: 10px;
+    margin-bottom: 15px;
+}
 
+.video-box {
+    position: relative;
+    padding-bottom: 56.25%;
+    height: 0;
+    margin-top: 15px;
+}
+
+.video-box iframe {
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    border-radius: 10px;
+}
+
+/* QUIZ */
 .quiz-btn {
     display: block;
     width: 100%;
-    padding: 12px;
-    margin: 10px 0;
-    background: #333;
-    color: white;
+    padding: 10px;
+    margin: 5px 0;
+    background: #eee;
     border: none;
     border-radius: 5px;
     cursor: pointer;
 }
 
-.quiz-btn:hover { background: #00ffd5; color: black; }
+.quiz-btn:hover { background: #00a884; color: white; }
