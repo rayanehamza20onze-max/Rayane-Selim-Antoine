@@ -3,98 +3,104 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>La Révolution ChatGPT - Projet SNT 2026</title>
+    <title>Exposé SNT : La révolution ChatGPT</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
 <header class="hero">
     <h1 class="parallax">La Révolution ChatGPT</h1>
-    <p>L’IA qui transforme le monde (Dernière mise à jour : 05/01/2025)</p>
-    <button id="darkModeBtn">🌓 Changer de thème</button>
+    <p>Dernière mise à jour : 05/01/2025</p>
+    <button id="darkModeBtn">🌙 Mode sombre</button>
 </header>
 
 <nav>
-    <div class="logo">AI 2026</div>
+    <div class="logo">SNT 2026</div>
     <div class="menu-toggle" id="menuToggle">☰</div>
     <div class="menu" id="menu">
         <a href="#presentation">Présentation</a>
-        <a href="#technique">Fonctionnement</a>
-        <a href="#usages">Usages</a>
+        <a href="#fonctionnement">Fonctionnement</a>
+        <a href="#analyse">Analyse</a>
         <a href="#dangers">Dangers</a>
+        <a href="#ressources">Ressources</a>
         <a href="#quiz">Quiz</a>
     </div>
 </nav>
 
 <section id="presentation" class="hidden">
-    <h2>1. Qu'est-ce que ChatGPT ?</h2>
+    <h2>Présentation de l'IA</h2>
     <div class="card">
-        <p>Lancé fin 2022 par <strong>OpenAI</strong>, cet agent conversationnel a marqué un tournant dans l’intelligence artificielle. Contrairement à un moteur de recherche, il ne cherche pas des liens, il <strong>génère</strong> des réponses originales.</p>
-        <h3>Chronologie</h3>
-        <div class="timeline">
-            <div class="event"><strong>1950</strong> – Test de Turing : Alan Turing pose la question "Les machines peuvent-elles penser ?"</div>
-            <div class="event"><strong>2017</strong> – Invention de l'architecture <em>Transformer</em> par Google.</div>
-            <div class="event"><strong>2022</strong> – Lancement public de ChatGPT.</div>
-            <div class="event"><strong>2024</strong> – Régulation IA (AI Act).</div>
-        </div>
+        <p>ChatGPT est un agent conversationnel qui semble avoir réponse à tout, marquant un nouveau pas dans les progrès de l'IA. Il a été créé par la société <strong>OpenAI</strong>.</p>
+        <p><strong>Illustration :</strong> Crédit : ChatGPT, Domaine public, via Wikimedia Commons.</p>
+        <blockquote>"La vraie révolution n’est peut-être pas l’intelligence artificielle… mais la façon dont nous allons apprendre à vivre avec."</blockquote>
     </div>
 </section>
 
-<section id="technique" class="hidden">
-    <h2>2. Le Fonctionnement Technique</h2>
+<section id="fonctionnement" class="hidden">
+    <h2>Comment fonctionne ChatGPT ?</h2>
     <div class="card">
         <ul>
-            <li><strong>LLM (Large Language Model)</strong> : Entraîné sur des milliards de phrases de livres et du web.</li>
-            <li><strong>Probabilité Statistique</strong> : Il prédit le mot suivant le plus probable sans "comprendre" réellement.</li>
-            <li><strong>Infrastructure</strong> : Fonctionne sur des supercalculateurs <strong>Microsoft Azure</strong> avec des puces <strong>NVIDIA H100</strong>.</li>
+            <li><strong>LLM (Large Language Model) :</strong> Entraîné sur des milliards de phrases issues du web et de livres.</li>
+            <li><strong>Probabilité Statistique :</strong> Il ne comprend pas le sens, il prédit le mot suivant le plus probable.</li>
+            <li><strong>Infrastructure :</strong> Fonctionne sur des supercalculateurs Microsoft Azure avec des puces NVIDIA H100.</li>
+            <li><strong>Entraînement :</strong> Utilise des données massives et un entraînement assisté par des humains.</li>
         </ul>
-        <h3>Vidéo Explicative</h3>
-        <div class="video-container">
-            <iframe width="100%" height="315" src="https://www.youtube.com/embed/7ell8KEbhJo" frameborder="0" allowfullscreen></iframe>
-        </div>
     </div>
 </section>
 
-<section id="usages" class="hidden">
-    <h2>3. L'Art du Prompting & Usages</h2>
+<section id="analyse" class="hidden">
+    <h2>Analyse des réponses et Possibilités</h2>
     <div class="card">
-        <p>Le <strong>Prompting</strong> est l'art de parler à l'IA pour obtenir des résultats précis.</p>
+        <h3>Peut-il répondre à tout ?</h3>
+        <p>Il donne des réponses impressionnantes, mais parfois complètement fausses (hallucinations). Il possède des limites et des biais basés sur ses données d'entraînement.</p>
+        <h3>Utilisations intelligentes</h3>
         <ul>
-            <li><strong>Le Rôle</strong> : "Agis en tant que professeur".</li>
-            <li><strong>Le Contexte</strong> : Expliquer la situation pour éviter les réponses floues.</li>
-            <li><strong>Les Contraintes</strong> : Définir le ton, la longueur ou le format.</li>
+            <li>Aide aux devoirs (explications de méthodes).</li>
+            <li>Aide à la programmation et rédaction de mails.</li>
+            <li>Outil de brainstorming et de correction de textes.</li>
         </ul>
-        <p>À l'école, il peut servir de tuteur pour expliquer une méthode ou corriger un texte.</p>
     </div>
 </section>
 
 <section id="dangers" class="hidden">
-    <h2>4. Dangers et Éthique</h2>
+    <h2>Dangers et Éthique</h2>
     <div class="card">
         <ul>
-            <li><strong>Hallucinations</strong> : L'IA peut inventer des faits avec assurance.</li>
-            <li><strong>Biais</strong> : Reflet des préjugés présents dans les données d'entraînement.</li>
-            <li><strong>Cybercriminalité</strong> : Risque de création de messages de phishing ou de codes malveillants.</li>
+            <li><strong>Désinformation :</strong> Risque de manipulations et fausses informations.</li>
+            <li><strong>Cybercriminalité :</strong> Utilisation possible pour des arnaques ou du phishing.</li>
+            <li><strong>Impact sur les métiers :</strong> Transformation de secteurs comme le journalisme ou la traduction.</li>
         </ul>
     </div>
 </section>
 
-<section id="stats" class="hidden">
-    <h2>Croissance de la puissance</h2>
-    <canvas id="chart" width="700" height="400"></canvas>
+<section id="ressources" class="hidden">
+    <h2>Ressources de l'exposé</h2>
+    <div class="card">
+        <h3>Vidéos conseillées</h3>
+        <ul>
+            <li><a href="https://youtu.be/7ell8KEbhJo">Ce qui se cache derrière ChatGPT (ScienceEtonnante)</a></li>
+            <li><a href="https://www.youtube.com/watch?v=ORp_S62I5S8">Comment fonctionne ChatGPT ? (INRIA)</a></li>
+        </ul>
+        <h3>Articles et Podcasts</h3>
+        <ul>
+            <li>Article du Monde : Pixels - Limites morales de l'IA.</li>
+            <li>Podcast Radio France : Les nouveaux enjeux de l’IA.</li>
+            <li>Magazine Epsiloon n°25 (CDI).</li>
+        </ul>
+    </div>
 </section>
 
 <section id="quiz" class="hidden">
-    <h2>Quiz IA</h2>
+    <h2>Quiz : Testez vos connaissances</h2>
     <div class="card">
-        <p id="question" style="font-weight: bold;"></p>
+        <p id="question"></p>
         <div id="answers"></div>
-        <p id="score" style="margin-top: 20px; color: #00ffd5;"></p>
+        <p id="score"></p>
     </div>
 </section>
 
 <footer>
-    Projet SNT 2026 – Lycée Mounier, Angers – Crédit image : Wikimedia Commons.
+    Les enseignants de SNT du lycée Mounier, ANGERS – Licence Creative Commons
 </footer>
 
 <script src="script.js"></script>
