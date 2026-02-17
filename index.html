@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Exposé SNT | La Révolution ChatGPT</title>
+    <title>SNT | La Révolution ChatGPT</title>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
@@ -21,26 +21,27 @@
     <div class="grid">
         <div class="card" onclick="ouvrirModale('architecture')">
             <div class="icon-box"><i class="fas fa-brain"></i></div>
-            <h2>1. Présentation & Fonctionnement</h2>
-            <p>Qui est <strong>OpenAI</strong> ? Découvrez comment l'IA prédit les mots grâce à son entraînement sur des milliards de données et l'assistance humaine.</p>
+            <h2>1. Présentation & IA</h2>
+            <p>Découvrez <strong>OpenAI</strong>, les données d'entraînement et le secret de la prédiction des mots par l'IA.</p>
         </div>
 
         <div class="card" onclick="ouvrirModale('limites')">
             <div class="icon-box"><i class="fas fa-eye-slash"></i></div>
-            <h2>2. Analyse des Réponses & Biais</h2>
-            <p>Peut-il répondre à tout ? Test des limites, exemples de <strong>réponses fausses</strong> et analyse des biais algorithmiques du modèle.</p>
+            <h2>2. Analyses & Biais</h2>
+            <p>Peut-il répondre à tout ? Analyse des <strong>hallucinations</strong> et des erreurs parfois impressionnantes.</p>
         </div>
 
         <div class="card" onclick="ouvrirModale('enjeux')">
             <div class="icon-box"><i class="fas fa-shield-alt"></i></div>
-            <h2>3. Usages, Éthique & Dangers</h2>
-            <p>De l'usage intelligent au lycée à la <strong>cybercriminalité</strong>. Analyse de l'impact sur les métiers et des questions de manipulation.</p>
+            <h2>3. Éthique & Dangers</h2>
+            <p>Impact sur les métiers, <strong>cybercriminalité</strong> et l'usage intelligent au lycée au-delà de la triche.</p>
         </div>
 
         <div class="card" style="cursor: default; grid-column: 1 / -1;">
             <div class="icon-box"><i class="fas fa-code"></i></div>
-            <h2>Console Technique</h2>
-            <button class="btn-ia" onclick="lancerDemo()">Simuler le processus de prédiction</button>
+            <h2>Console de Prédiction</h2>
+            <p>Visualisez comment l'IA traite les informations en temps réel.</p>
+            <button class="btn-ia" onclick="lancerDemo()">Simuler un traitement</button>
             <div id="demo-box"></div>
         </div>
     </div>
