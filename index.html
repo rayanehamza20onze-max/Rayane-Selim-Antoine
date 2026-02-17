@@ -1,70 +1,66 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <title>La Révolution ChatGPT</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Révolution ChatGPT</title>
+<link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-<header>
-    <h1>🚀 La Révolution ChatGPT</h1>
-    <p>Comprendre l’IA qui transforme notre monde</p>
+<header class="hero">
+    <h1 class="parallax">La Révolution ChatGPT</h1>
+    <p>L’intelligence artificielle qui transforme le monde</p>
     <button id="darkModeBtn">🌙 Mode sombre</button>
 </header>
 
 <nav>
-    <a href="#presentation">Présentation</a>
-    <a href="#timeline">Chronologie</a>
-    <a href="#stats">Statistiques</a>
-    <a href="#quiz">Quiz</a>
+    <div class="logo">AI 2026</div>
+    <div class="menu-toggle" id="menuToggle">☰</div>
+    <div class="menu" id="menu">
+        <a href="#presentation">Présentation</a>
+        <a href="#timeline">Chronologie</a>
+        <a href="#stats">Statistiques</a>
+        <a href="#quiz">Quiz</a>
+    </div>
 </nav>
 
-<!-- PRESENTATION -->
 <section id="presentation" class="hidden">
-    <h2>📌 Présentation</h2>
+    <h2>Présentation</h2>
     <div class="card">
-        <p><strong>ChatGPT</strong> est un agent conversationnel développé par OpenAI en novembre 2022.</p>
-        <p>Contrairement à Google, il ne cherche pas des pages web : il génère une réponse originale grâce à un modèle LLM basé sur l’architecture Transformer.</p>
-        <p>Il a atteint 100 millions d’utilisateurs en seulement 2 mois.</p>
+        ChatGPT est un modèle de langage basé sur l’architecture Transformer.
+        Il génère du texte en prédisant le mot suivant selon des probabilités.
     </div>
 </section>
 
-<!-- TIMELINE -->
 <section id="timeline" class="hidden">
-    <h2>⏳ Chronologie de l'IA</h2>
-
+    <h2>Chronologie</h2>
     <div class="timeline">
         <div class="event">1950 – Test de Turing</div>
-        <div class="event">2017 – Architecture Transformer</div>
+        <div class="event">2017 – Transformer</div>
         <div class="event">2020 – GPT-3</div>
-        <div class="event">2022 – ChatGPT public</div>
-        <div class="event">2024 – AI Act européen</div>
+        <div class="event">2022 – ChatGPT</div>
+        <div class="event">2024 – Régulation IA</div>
     </div>
 </section>
 
-<!-- GRAPH -->
 <section id="stats" class="hidden">
-    <h2>📊 Croissance des utilisateurs</h2>
+    <h2>Croissance</h2>
     <canvas id="chart" width="700" height="400"></canvas>
 </section>
 
-<!-- QUIZ -->
 <section id="quiz" class="hidden">
-    <h2>🧠 Quiz interactif</h2>
-
+    <h2>Quiz IA</h2>
     <div class="card">
-        <p>ChatGPT comprend-il réellement le sens des phrases ?</p>
-        <button onclick="checkAnswer(false)">Oui</button>
-        <button onclick="checkAnswer(true)">Non</button>
-        <p id="quizResult"></p>
+        <p id="question"></p>
+        <div id="answers"></div>
+        <p id="score"></p>
     </div>
 </section>
 
 <footer>
-    Projet SNT – La Révolution ChatGPT – 2026
+Projet SNT 2026 – Site avancé IA
 </footer>
 
 <script src="script.js"></script>
