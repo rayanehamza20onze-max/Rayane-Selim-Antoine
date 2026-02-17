@@ -23,30 +23,32 @@
     <div class="grid">
         <div class="card" onclick="ouvrirModale('architecture')">
             <div class="icon-box"><i class="fas fa-brain"></i></div>
-            <h2>Architecture GPT</h2>
-            <p>Découvrez OpenAI et comment le modèle prédit les mots grâce à des milliards de paramètres.</p>
+            <h2>Architecture & Hardware</h2>
+            <p>Analyse des <strong>Data Centers</strong> de Microsoft Azure et de la puissance de calcul nécessaire : 25 000 puces <strong>NVIDIA H100</strong>. Découvrez le fonctionnement des vecteurs à 1536 dimensions et l'utilisation massive de l'algèbre linéaire pour prédire le langage.</p>
         </div>
 
         <div class="card" onclick="ouvrirModale('limites')">
             <div class="icon-box"><i class="fas fa-eye-slash"></i></div>
-            <h2>Limites & Biais</h2>
-            <p>Analyse des réponses : des résultats impressionnants mais parfois totalement faux (hallucinations).</p>
+            <h2>Prompting & Limites</h2>
+            <p>Maîtrisez l'art du <strong>Prompt Engineering</strong> (Rôle, Contexte, Contraintes) pour limiter les <strong>hallucinations</strong>. Étude de la confidentialité des données, des biais algorithmiques et de l'importance du contrôle humain sur les réponses générées.</p>
         </div>
 
         <div class="card" onclick="ouvrirModale('enjeux')">
             <div class="icon-box"><i class="fas fa-shield-alt"></i></div>
-            <h2>Enjeux & Avenir</h2>
-            <p>Impact sur les métiers, cybercriminalité et utilisations intelligentes au lycée.</p>
+            <h2>Enjeux & Futur</h2>
+            <p>Exploration des <strong>GPTs personnalisés</strong> et de la multimodalité (Vision/DALL-E). Analyse de l'impact sur les métiers de demain et des risques liés à la <strong>cybercriminalité</strong> automatisée et au phishing haute fidélité.</p>
         </div>
 
         <div class="card" style="cursor: default; grid-column: 1 / -1;">
             <div class="icon-box"><i class="fas fa-code"></i></div>
-            <h2>Démo Temps Réel</h2>
-            <p>Visualisez comment l'IA traite les données mot après mot (système de tokens).</p>
+            <h2>Démo Technique Temps Réel</h2>
+            <p>Visualisation en direct du processus de <strong>prédiction statistique</strong>. Observez comment le modèle transforme le langage humain en tokens numériques avant d'effectuer des milliards de multiplications de matrices par seconde pour trouver la réponse.</p>
             <button class="btn-ia" onclick="lancerDemo()">Simuler un traitement IA</button>
             <div id="demo-box"></div>
         </div>
-    </div> </div> <div id="modal-container" class="modal">
+    </div> </div>
+
+<div id="modal-container" class="modal">
     <div class="modal-content">
         <span class="close-modal">&times;</span>
         <div id="modal-body"></div>
