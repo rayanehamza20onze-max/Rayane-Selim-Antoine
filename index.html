@@ -1,57 +1,61 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SNT | La Révolution ChatGPT</title>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>La Révolution ChatGPT</title>
+<link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
-<button id="theme-toggle" title="Changer de mode">🌙</button>
-
-<header>
+<header class="fade-in">
     <h1>La Révolution ChatGPT</h1>
-    <p>Par Rayane, Selim et Antoine • SNT Lycée Mounier</p>
+    <p>Comprendre l’IA qui transforme le monde</p>
+    <button id="darkModeBtn">🌙 Mode sombre</button>
 </header>
 
-<div class="container">
-    <div class="grid">
-        <div class="card" onclick="ouvrirModale('architecture')">
-            <div class="icon-box"><i class="fas fa-brain"></i></div>
-            <h2>1. Présentation & IA</h2>
-            <p>Découvrez <strong>OpenAI</strong>, le fonctionnement des <strong>Transformers</strong> et le secret des probabilités.</p>
-        </div>
+<nav>
+    <a href="#timeline">Histoire</a>
+    <a href="#stats">Statistiques</a>
+    <a href="#quiz">Quiz</a>
+</nav>
 
-        <div class="card" onclick="ouvrirModale('limites')">
-            <div class="icon-box"><i class="fas fa-eye-slash"></i></div>
-            <h2>2. Analyses & Biais</h2>
-            <p>Peut-il répondre à tout ? Focus sur les <strong>hallucinations</strong> et les limites du modèle.</p>
-        </div>
+<!-- TIMELINE -->
+<section id="timeline" class="hidden">
+<h2>⏳ Chronologie de l'IA</h2>
 
-        <div class="card" onclick="ouvrirModale('enjeux')">
-            <div class="icon-box"><i class="fas fa-shield-alt"></i></div>
-            <h2>3. Éthique & Dangers</h2>
-            <p>Cybercriminalité, impact sur les métiers et usage intelligent au lycée.</p>
-        </div>
+<div class="timeline">
+    <div class="event">1950 – Test de Turing</div>
+    <div class="event">2017 – Transformer</div>
+    <div class="event">2020 – GPT-3</div>
+    <div class="event">2022 – ChatGPT</div>
+    <div class="event">2024 – AI Act</div>
+</div>
+</section>
 
-        <div class="card" style="cursor: default; grid-column: 1 / -1;">
-            <div class="icon-box"><i class="fas fa-code"></i></div>
-            <h2>Console de Prédiction</h2>
-            <button class="btn-ia" onclick="lancerDemo()">Simuler un traitement IA</button>
-            <div id="demo-box"></div>
-        </div>
-    </div>
+<!-- GRAPH -->
+<section id="stats" class="hidden">
+<h2>📊 Croissance des utilisateurs</h2>
+<canvas id="chart" width="600" height="400"></canvas>
+</section>
+
+<!-- QUIZ -->
+<section id="quiz" class="hidden">
+<h2>🧠 Quiz : Connais-tu ChatGPT ?</h2>
+
+<div class="quiz-box">
+    <p>1. ChatGPT comprend-il vraiment le sens des phrases ?</p>
+    <button onclick="checkAnswer(false)">Oui</button>
+    <button onclick="checkAnswer(true)">Non</button>
 </div>
 
-<div id="modal-container" class="modal">
-    <div class="modal-content">
-        <span class="close-modal">&times;</span>
-        <div id="modal-body"></div>
-    </div>
-</div>
+<p id="quizResult"></p>
+</section>
+
+<footer>
+Projet SNT – La Révolution ChatGPT – 2026
+</footer>
 
 <script src="script.js"></script>
 </body>
