@@ -1,14 +1,9 @@
-// MODE SOMBRE
+// DARK MODE
 document.getElementById("darkModeBtn").onclick = () => {
-    document.body.classList.toggle("dark-theme");
+    document.body.classList.toggle("dark");
 };
 
-// MENU MOBILE
-document.getElementById("menuToggle").onclick = () => {
-    document.getElementById("menu").classList.toggle("active");
-};
-
-// ANIMATIONS D'APPARITION
+// SCROLL ANIMATION
 const observer = new IntersectionObserver(entries => {
     entries.forEach(entry => {
         if(entry.isIntersecting) entry.target.classList.add("show");
@@ -16,76 +11,47 @@ const observer = new IntersectionObserver(entries => {
 });
 document.querySelectorAll(".hidden").forEach(el => observer.observe(el));
 
-// GRAPHIQUE DES PARAMÈTRES (Puissance de l'IA)
-const canvas = document.getElementById("chart");
-if(canvas){
-    const ctx = canvas.getContext("2d");
-    const values = [10, 50, 175, 300]; // Représentation simplifiée
-    const labels = ["GPT-1", "GPT-2", "GPT-3", "GPT-4"];
-    let progress = 0;
-
-    function animateChart() {
-        ctx.clearRect(0, 0, 700, 400);
-        values.forEach((v, i) => {
-            ctx.fillStyle = "#00ffd5";
-            let h = v * progress;
-            ctx.fillRect(100 + i*150, 350 - h, 60, h);
-            ctx.fillStyle = "white";
-            ctx.fillText(labels[i], 110 + i*150, 370);
-        });
-        if(progress < 1) {
-            progress += 0.02;
-            requestAnimationFrame(animateChart);
-        }
-    }
-    animateChart();
-}
-
-// QUIZ COMPLET
+// QUIZ BASÉ SUR TES INFOS
 const quizData = [
     {
-        q: "ChatGPT comprend-il réellement vos phrases ?",
-        a: ["Oui, il est conscient", "Non, il prédit des probabilités"],
-        c: 1
+        question: "ChatGPT comprend-il vraiment ce qu'il dit ?",
+        answers: ["Oui, parfaitement", "Non, c'est de la probabilité statistique"],
+        correct: 1
     },
     {
-        q: "Quelle entreprise a créé ChatGPT ?",
-        a: ["Google", "OpenAI", "Microsoft"],
-        c: 1
+        question: "Quelle société est à l'origine de ChatGPT ?",
+        answers: ["Google", "OpenAI", "Microsoft"],
+        correct: 1
     },
     {
-        q: "Comment appelle-t-on l'art de donner des instructions à l'IA ?",
-        a: ["Le Coding", "Le Prompting", "Le Phishing"],
-        c: 1
-    },
-    {
-        q: "Qu'est-ce qu'une 'hallucination' pour une IA ?",
-        a: ["Un virus informatique", "Une réponse inventée fausse", "Une panne de serveur"],
-        c: 1
+        question: "Qu'est-ce qu'un 'prompt' ?",
+        answers: ["Un virus", "L'art de donner une instruction à l'IA", "Un type de serveur"],
+        correct: 1
     }
 ];
 
-let cur = 0, score = 0;
-function loadQuiz() {
-    const qEl = document.getElementById("question");
-    const aEl = document.getElementById("answers");
-    if(cur >= quizData.length) {
-        qEl.innerText = `Quiz terminé ! Votre score : ${score}/${quizData.length}`;
-        aEl.innerHTML = "";
-        return;
-    }
-    const data = quizData[cur];
-    qEl.innerText = data.q;
-    aEl.innerHTML = "";
-    data.a.forEach((ans, i) => {
-        const b = document.createElement("button");
-        b.innerText = ans;
-        b.onclick = () => {
-            if(i === data.c) score++;
-            cur++;
-            loadQuiz();
+let current = 0, score = 0;
+
+function loadQuestion() {
+    const q = quizData[current];
+    const answersDiv = document.getElementById("answers");
+    document.getElementById("question").innerText = q.question;
+    answersDiv.innerHTML = "";
+    
+    q.answers.forEach((ans, i) => {
+        const btn = document.createElement("button");
+        btn.innerText = ans;
+        btn.onclick = () => {
+            if(i === q.correct) score++;
+            current++;
+            if(current < quizData.length) loadQuestion();
+            else {
+                document.getElementById("question").innerText = "Terminé !";
+                answersDiv.innerHTML = "";
+                document.getElementById("score").innerText = "Score : " + score + "/" + quizData.length;
+            }
         };
-        aEl.appendChild(b);
+        answersDiv.appendChild(btn);
     });
 }
-loadQuiz();
+loadQuestion();
