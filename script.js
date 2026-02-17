@@ -4,93 +4,63 @@ function ouvrirModale(type) {
     let contenu = "";
     
     modal.style.display = "block";
-    document.body.style.overflow = "hidden"; // Bloque le scroll arrière
-
+    
     if (type === 'architecture') {
         contenu = `
             <div class="detail-text">
-                <h1>I. Qu'est-ce que ChatGPT & Comment ça marche ?</h1>
-                <p>ChatGPT est un agent conversationnel créé par <strong>OpenAI</strong>. Contrairement à un moteur de recherche, il ne cherche pas d'infos, il les <strong>génère</strong>.</p>
-                <h3>Le secret technique :</h3>
+                <h1>I. ChatGPT : Une Révolution Technologique</h1>
+                <p><strong>ChatGPT</strong> est un agent conversationnel développé par <strong>OpenAI</strong> (San Francisco) et lancé en novembre 2022.</p>
+                
+                <h3>⚙️ Le Fonctionnement Technique</h3>
                 <ul>
-                    <li><strong>LLM (Large Language Model) :</strong> Entraîné sur des milliards de phrases du web et de livres.</li>
-                    <li><strong>Probabilité Statistique :</strong> Il ne comprend pas le sens, il prédit le mot suivant le plus probable.</li>
-                    <li><strong>Infrastructure :</strong> Fonctionne sur des supercalculateurs Microsoft Azure avec des puces NVIDIA H100.</li>
+                    <li><strong>LLM (Large Language Model) :</strong> Entraîné sur des milliards de phrases, livres et codes informatiques.</li>
+                    <li><strong>Probabilité Statistique :</strong> Il prédit le mot suivant le plus probable en fonction du contexte.</li>
+                    <li><strong>Architecture Transformer :</strong> Une technologie permettant d'analyser les relations complexes entre les mots.</li>
+                    <li><strong>RLHF :</strong> Entraînement assisté par des humains pour améliorer la pertinence et la sécurité.</li>
                 </ul>
+
+                <h3>📊 Chiffres Clés</h3>
+                <div class="stats-grid">
+                    <div class="stat-item">100M d'utilisateurs en 2 mois</div>
+                    <div class="stat-item">25 000 puces NVIDIA H100</div>
+                    <div class="stat-item">Investissement : 10 Mds $ (Microsoft)</div>
+                    <div class="stat-item">Modèle : GPT-4o / Sora / DALL-E</div>
+                </div>
+
                 <div class="video-container">
                     <iframe src="https://www.youtube.com/embed/7ell8KEbhJo" allowfullscreen></iframe>
                 </div>
-                <p><em>Astuce SNT : Le modèle utilise le RLHF (Reinforcement Learning from Human Feedback) pour apprendre à ne pas être impoli.</em></p>
+                <p><em>👉 Transition : Malgré ces prouesses, l'IA possède des limites majeures que nous allons analyser.</em></p>
             </div>`;
     } 
     else if (type === 'limites') {
-        contenu = `
-            <div class="detail-text">
-                <h1>II. Analyse des Réponses & Hallucinations</h1>
-                <p>L'IA n'a pas de conscience. Elle peut être très convaincante tout en disant n'importe quoi.</p>
-                <h3>Les 3 grandes limites :</h3>
-                <ul>
-                    <li><strong>Les Hallucinations :</strong> Invention de sources, de dates ou de faits historiques.</li>
-                    <li><strong>Les Biais Algorithmiques :</strong> Reproduit les préjugés (sexistes, racistes) présents dans ses données.</li>
-                    <li><strong>La Date de coupure :</strong> Ses connaissances s'arrêtent souvent à une certaine date (sauf s'il navigue sur le web).</li>
-                </ul>
-                <div class="video-container">
-                    <iframe src="https://www.youtube.com/embed/Q4Np2tlq2vc" allowfullscreen></iframe>
-                </div>
-            </div>`;
+        contenu = `<div class="detail-text"><h1>II. Analyses & Limites</h1><p>Focus sur les <strong>hallucinations</strong> : l'IA invente des faits avec certitude.</p><div class="video-container"><iframe src="https://www.youtube.com/embed/Q4Np2tlq2vc" allowfullscreen></iframe></div></div>`;
     } 
     else if (type === 'enjeux') {
-        contenu = `
-            <div class="detail-text">
-                <h1>III. Enjeux, Éthique et Futur</h1>
-                <h3>Aller au-delà de la triche</h3>
-                <p>Utilisé intelligemment, ChatGPT est un tuteur personnel. Il peut expliquer un concept de SNT de 10 façons différentes.</p>
-                <h3>Les Dangers :</h3>
-                <ul>
-                    <li><strong>Cybercriminalité :</strong> Aide les hackers à rédiger des mails de phishing parfaits.</li>
-                    <li><strong>Désinformation :</strong> Création massive de "Fake News" impossibles à distinguer du vrai.</li>
-                    <li><strong>Impact Métiers :</strong> Bouleversement des secteurs du code, du journalisme et du graphisme.</li>
-                </ul>
-                <div class="video-container">
-                    <iframe src="https://www.youtube.com/embed/8-9-7jOOn6U" allowfullscreen></iframe>
-                </div>
-            </div>`;
+        contenu = `<div class="detail-text"><h1>III. Éthique & Dangers</h1><p>Analyse des risques de <strong>cybercriminalité</strong> et de désinformation.</p><div class="video-container"><iframe src="https://www.youtube.com/embed/8-9-7jOOn6U" allowfullscreen></iframe></div></div>`;
     }
     body.innerHTML = contenu;
 }
 
-// FERMETURE
+// Fermeture
 document.querySelector('.close-modal').onclick = function() {
     document.getElementById('modal-container').style.display = "none";
-    document.body.style.overflow = "auto";
-    document.getElementById('modal-body').innerHTML = ""; // Coupe le son
 };
 
-// Fermer au clic extérieur
 window.onclick = function(e) {
-    const modal = document.getElementById('modal-container');
-    if (e.target == modal) {
-        modal.style.display = "none";
-        document.body.style.overflow = "auto";
-        document.getElementById('modal-body').innerHTML = "";
+    if (e.target.id === 'modal-container') {
+        document.getElementById('modal-container').style.display = "none";
     }
 };
 
-// DARK MODE
+// Mode Sombre
 document.getElementById('theme-toggle').onclick = function() {
     document.body.classList.toggle('dark-theme');
-    this.textContent = document.body.classList.contains('dark-theme') ? '☀️' : '🌙';
 };
 
-// DÉMO CONSOLE
+// Démo Console
 function lancerDemo() {
     const box = document.getElementById('demo-box');
     box.style.display = "block";
-    box.innerHTML = "> Analyse du prompt...<br>> Découpage en Tokens...<br>> Calcul des probabilités : ";
-    const texte = "98.4% de chances que le mot suivant soit 'Révolution'.";
-    let i = 0;
-    function type() {
-        if (i < texte.length) { box.innerHTML += texte.charAt(i); i++; setTimeout(type, 40); }
-    }
-    type();
+    box.innerHTML = "> Calcul des probabilités statistiques... <br>> Prochain token prédit : 'France' (99.2%)";
 }
