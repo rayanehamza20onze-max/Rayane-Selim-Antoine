@@ -23,8 +23,8 @@ window.onclick = function(event) {
 };
 
 const quizData = [
-    { q: "Qu'est-ce que le RLHF ?", a: ["Feedback humain", "Infrastructure GPU"], c: 0 },
-    { q: "ChatGPT convertit les mots en quoi ?", a: ["En images", "En vecteurs numériques"], c: 1 }
+    { q: "Quand OpenAI a-t-il été créé ?", a: ["2015", "2022"], c: 0 },
+    { q: "En combien de temps ChatGPT a atteint 100M d'utilisateurs ?", a: ["2 mois", "1 an"], c: 0 }
 ];
 let cur = 0; let score = 0;
 
