@@ -1,3 +1,4 @@
+// Fonction pour ouvrir/fermer les rectangles
 function toggleCard(element) {
     const allCards = document.querySelectorAll('.card');
     allCards.forEach(c => {
@@ -6,10 +7,10 @@ function toggleCard(element) {
     element.classList.toggle('active');
 }
 
+// Système de Quiz
 const quizData = [
     { q: "Qui a créé ChatGPT ?", a: ["OpenAI", "Google"], c: 0 },
-    { q: "L'IA comprend-elle le sens ?", a: ["Oui", "Non, c'est de la probabilité"], c: 1 },
-    { q: "L'IA peut-elle inventer des faits ?", a: ["Oui (hallucinations)", "Non jamais"], c: 0 }
+    { q: "L'IA peut-elle mentir ?", a: ["Oui (hallucinations)", "Non jamais"], c: 0 }
 ];
 
 let cur = 0;
@@ -18,6 +19,8 @@ let score = 0;
 function runQuiz() {
     const qEl = document.getElementById("question");
     const oEl = document.getElementById("options");
+
+    if(!qEl || !oEl) return;
 
     if(cur >= quizData.length) {
         qEl.innerText = "Quiz fini !";
@@ -35,7 +38,7 @@ function runQuiz() {
         b.innerText = opt;
         b.className = "quiz-btn";
         b.onclick = (e) => {
-            e.stopPropagation();
+            e.stopPropagation(); // Empêche de fermer la carte au clic
             if(i === d.c) score++;
             cur++;
             runQuiz();
