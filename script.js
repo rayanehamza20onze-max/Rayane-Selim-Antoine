@@ -5,14 +5,26 @@ function openModal(modalId) {
 }
 
 function closeModal(modalId) {
-    document.getElementById(modalId).style.display = "none";
+    const modal = document.getElementById(modalId);
+    modal.style.display = "none";
     document.body.style.overflow = "auto";
+    const iframes = modal.querySelectorAll('iframe');
+    iframes.forEach(i => i.src = i.src);
 }
 
-// Quiz simple
+window.onclick = function(event) {
+    if (event.target.className === 'modal') {
+        const modals = document.querySelectorAll('.modal');
+        modals.forEach(m => {
+            m.style.display = "none";
+            document.body.style.overflow = "auto";
+        });
+    }
+};
+
 const quizData = [
-    { q: "Qui a créé ChatGPT ?", a: ["OpenAI", "Google"], c: 0 },
-    { q: "L'IA a-t-elle des hallucinations ?", a: ["Oui", "Non"], c: 0 }
+    { q: "Qu'est-ce que le RLHF ?", a: ["Feedback humain", "Infrastructure GPU"], c: 0 },
+    { q: "ChatGPT convertit les mots en quoi ?", a: ["En images", "En vecteurs numériques"], c: 1 }
 ];
 let cur = 0; let score = 0;
 
@@ -20,7 +32,7 @@ function runQuiz() {
     const qEl = document.getElementById("question");
     const oEl = document.getElementById("options");
     if (cur >= quizData.length) {
-        qEl.innerText = "Quiz fini !";
+        qEl.innerText = "Terminé !";
         oEl.innerHTML = "";
         document.getElementById("score-text").innerText = `Score : ${score}/${quizData.length}`;
         return;
