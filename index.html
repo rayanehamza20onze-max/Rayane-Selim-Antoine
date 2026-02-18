@@ -25,19 +25,19 @@
             <div class="card" onclick="openModal('tech-modal')">
                 <span class="icon">⚙️</span>
                 <h3>2. Fonctionnement</h3>
-                <p>Infrastructure et Statistique</p>
+                <p>Architecture & Mathématiques</p>
             </div>
 
             <div class="card" onclick="openModal('limites-modal')">
                 <span class="icon">🔍</span>
                 <h3>3. Limites & Prompting</h3>
-                <p>Hallucinations et Maîtrise</p>
+                <p>Hallucinations & Maîtrise</p>
             </div>
 
             <div class="card" onclick="openModal('enjeux-modal')">
                 <span class="icon">🛡️</span>
                 <h3>4. Enjeux & Éthique</h3>
-                <p>Société et Environnement</p>
+                <p>Société & Environnement</p>
             </div>
 
             <div class="card" onclick="openModal('ressources-modal')">
@@ -64,7 +64,6 @@
                     <div class="video-container">
                         <iframe src="https://www.youtube.com/embed/ORp_S62I5S8" frameborder="0" allowfullscreen></iframe>
                     </div>
-                    <a href="https://openai.com/chatgpt" target="_blank" class="modal-link">Découvrir OpenAI</a>
                 </div>
             </div>
         </div>
@@ -74,13 +73,14 @@
                 <span class="close" onclick="closeModal('tech-modal')">&times;</span>
                 <h2>2. Fonctionnement technique</h2>
                 <div class="detail-body">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/91/Transformer_full.png/500px-Transformer_full.png" class="modal-img" alt="Transformer Architecture">
-                    <p>Son fonctionnement repose sur la prédiction statistique du mot suivant, un processus rendu possible par un entraînement massif sur des serveurs géants. Cette infrastructure invisible s'appuie sur des milliers de GPU (processeurs graphiques) ultra-puissants hébergés dans des data centers gourmands en énergie.</p>
-                    <p>Pour affiner ses réponses et garantir une certaine sécurité, l'IA bénéficie d'un entraînement assisté par des humains qui évaluent la pertinence de ses propos.</p>
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/91/Transformer_full.png/500px-Transformer_full.png" class="modal-img" alt="Transformer">
+                    <p>Le fonctionnement de ChatGPT repose sur l’architecture Transformer, un modèle mathématique qui utilise des mécanismes d'attention pour traiter des séquences de données. Contrairement à une simple base de données, l'IA convertit chaque mot en vecteurs numériques dans un espace à plusieurs dimensions pour calculer des relations sémantiques. Son cœur algorithmique effectue des probabilités conditionnelles complexes pour prédire le jeton (token) suivant le plus statistiquement probable selon le contexte.</p>
+                    <p>Cette prouesse mathématique nécessite une infrastructure physique colossale, composée de milliers de GPU Nvidia (processeurs graphiques) capables de réaliser des milliards d'opérations par seconde. Ces composants sont regroupés dans des Data Centers géants qui consomment une quantité massive d'énergie et nécessitent un refroidissement constant à l'eau.</p>
+                    <p>Pour passer d'un simple calcul statistique à un agent conversationnel cohérent, OpenAI utilise le RLHF (Reinforcement Learning from Human Feedback). Ce processus d'entraînement assisté par des humains permet d'ajuster les poids mathématiques du modèle afin d'éliminer les réponses toxiques ou incohérentes. Ainsi, l'IA ne "comprend" pas le sens des phrases, mais optimise une fonction de perte pour minimiser l'erreur de prédiction.</p>
+                    <p>Cependant, cette puissance de calcul peut mener à des "hallucinations" lorsque les probabilités favorisent une suite de mots grammaticalement correcte mais factuellement fausse. En résumé, ChatGPT est une usine de calcul intensif où les mathématiques de haut niveau rencontrent une infrastructure matérielle aux enjeux écologiques et éthiques majeurs.</p>
                     <div class="video-container">
                         <iframe src="https://www.youtube.com/embed/7ell8KEbhJo" frameborder="0" allowfullscreen></iframe>
                     </div>
-                    <a href="https://lebigdata.fr" target="_blank" class="modal-link">Article technique</a>
                 </div>
             </div>
         </div>
@@ -88,11 +88,10 @@
         <div id="limites-modal" class="modal">
             <div class="modal-content">
                 <span class="close" onclick="closeModal('limites-modal')">&times;</span>
-                <h2>3. Limites et Prompting</h2>
+                <h2>3. Limites & Prompting</h2>
                 <div class="detail-body">
-                    <img src="https://images.unsplash.com/photo-1684369175833-30472493390c?auto=format&fit=crop&w=800" class="modal-img" alt="Prompting">
-                    <p>L'outil possède des limites majeures, notamment les "hallucinations" où il invente des faits avec une assurance totale. L'art du "prompting" devient alors une compétence essentielle pour piloter l'IA avec précision et esprit critique.</p>
-                    <p>Pour les élèves, l'enjeu est de dépasser la simple triche pour en faire un assistant capable de reformuler des concepts ou de structurer des idées complexes.</p>
+                    <p>L'outil possède des limites majeures, notamment les "hallucinations" où il invente des faits avec une assurance totale. Pour les élèves, l'enjeu est de dépasser la simple triche pour en faire un assistant capable de reformuler des concepts ou de structurer des idées complexes.</p>
+                    <p>L'art du "prompting" devient alors une compétence essentielle pour piloter l'IA avec précision et esprit critique.</p>
                     <div class="video-container">
                         <iframe src="https://www.youtube.com/embed/RKtR-lSOq2g" frameborder="0" allowfullscreen></iframe>
                     </div>
@@ -103,11 +102,9 @@
         <div id="enjeux-modal" class="modal">
             <div class="modal-content">
                 <span class="close" onclick="closeModal('enjeux-modal')">&times;</span>
-                <h2>4. Enjeux Éthiques et Futur</h2>
+                <h2>4. Enjeux & Éthique</h2>
                 <div class="detail-body">
-                    <img src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&w=800" class="modal-img" alt="Cyber">
-                    <p>Cette technologie transforme déjà de nombreux métiers tout en facilitant malheureusement certaines dérives comme la cybercriminalité ou la désinformation massive.</p>
-                    <p>Enfin, l'utilisation de ChatGPT pose des questions éthiques et environnementales cruciales que chaque utilisateur doit avoir en tête. Il est important d'avoir un esprit critique face à ces outils.</p>
+                    <p>Cette technologie transforme déjà de nombreux métiers tout en facilitant malheureusement certaines dérives comme la cybercriminalité ou la désinformation massive. Enfin, l'utilisation de ChatGPT pose des questions éthiques et environnementales cruciales que chaque utilisateur doit avoir en tête.</p>
                     <div class="video-container">
                         <iframe src="https://www.youtube.com/embed/S_8qM9vL7iQ" frameborder="0" allowfullscreen></iframe>
                     </div>
@@ -118,12 +115,11 @@
         <div id="ressources-modal" class="modal">
             <div class="modal-content">
                 <span class="close" onclick="closeModal('ressources-modal')">&times;</span>
-                <h2>5. Sources & Ressources</h2>
+                <h2>5. Ressources</h2>
                 <div class="detail-body">
-                    <p><strong>Ressources en ligne :</strong> Article lebigdata.fr (INSEE), Article lemonde.fr (Pixels), Article eductive.ca.</p>
-                    <p><strong>Presse papier :</strong> Dossier Epsiloon n°25 (juillet 2023), article Télérama n°3816.</p>
-                    <p><strong>Audio/Vidéo :</strong> Podcast Radio France, Vidéos ScienceEtonnante et INRIA Flowers.</p>
-                    <a href="https://www.radiofrance.fr" target="_blank" class="modal-link">Écouter le Podcast</a>
+                    <p><strong>En ligne :</strong> Article lebigdata.fr, Article lemonde.fr (Pixels), eductive.ca.</p>
+                    <p><strong>Presse :</strong> Dossier Epsiloon n°25, Télérama n°3816.</p>
+                    <p><strong>Vidéo :</strong> "Comment fonctionne ChatGPT ?" (INRIA).</p>
                 </div>
             </div>
         </div>
@@ -133,7 +129,7 @@
                 <span class="close" onclick="closeModal('quiz-modal')">&times;</span>
                 <h2>Quiz IA</h2>
                 <div id="quiz-area">
-                    <p id="question">Chargement...</p>
+                    <p id="question">Prêt pour le quiz ?</p>
                     <div id="options"></div>
                     <p id="score-text"></p>
                 </div>
