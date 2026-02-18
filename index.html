@@ -3,102 +3,150 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>La Révolution ChatGPT - Projet SNT</title>
+    <title>Exposé SNT : La Révolution ChatGPT</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<header class="hero">
-    <h1>La Révolution ChatGPT</h1>
-    <p>Cliquez sur un rectangle pour explorer le contenu</p>
-</header>
+    <header class="main-header">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/0/04/ChatGPT_logo.svg" alt="Logo ChatGPT" class="header-logo">
+        <h1>La Révolution ChatGPT</h1>
+        <p>Par Rayane, Selim et Antoine • SNT 2026</p>
+    </header>
 
-<main class="container">
-    <div class="card" onclick="toggleCard(this)">
-        <div class="card-header">
-            <span class="icon">📝</span>
-            <h2>Présentation</h2>
-        </div>
-        <div class="card-content">
-            <div class="media-container">
-                <img src="https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&w=800" alt="IA Concept">
+    <main class="container">
+        <section class="cards-grid">
+            <div class="card" onclick="openModal('presentation-modal')">
+                <span class="icon">📝</span>
+                <h3>1. Présentation</h3>
+                <p>Introduction, Consignes et Analyse.</p>
             </div>
-            <p>ChatGPT est un agent conversationnel qui marque un pas majeur dans l'IA depuis fin 2022. Créé par OpenAI, il pose des questions sur notre façon d'apprendre et de communiquer.</p>
-            <p><strong>Consignes :</strong> Présentation orale de 10 min en trinôme.</p>
-            <div class="video-box">
-                <iframe src="https://www.youtube.com/embed/ORp_S62I5S8" frameborder="0" allowfullscreen></iframe>
-            </div>
-        </div>
-    </div>
 
-    <div class="card" onclick="toggleCard(this)">
-        <div class="card-header">
-            <span class="icon">⚙️</span>
-            <h2>Fonctionnement</h2>
-        </div>
-        <div class="card-content">
-            <div class="media-container">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/91/Transformer_full.png/800px-Transformer_full.png" alt="Architecture Transformer">
+            <div class="card" onclick="openModal('archi-modal')">
+                <span class="icon">⚙️</span>
+                <h3>2. Fonctionnement</h3>
+                <p>Architecture, LLM et Hardware.</p>
             </div>
-            <ul>
-                <li><strong>LLM :</strong> Entraîné sur des milliards de textes.</li>
-                <li><strong>Probabilité :</strong> Prédit le mot suivant le plus probable.</li>
-                <li><strong>Hardware :</strong> Puces NVIDIA H100 et serveurs Azure.</li>
-            </ul>
-            <div class="video-box">
-                <iframe src="https://www.youtube.com/embed/7ell8KEbhJo" frameborder="0" allowfullscreen></iframe>
-            </div>
-        </div>
-    </div>
 
-    <div class="card" onclick="toggleCard(this)">
-        <div class="card-header">
-            <span class="icon">📊</span>
-            <h2>Statistiques</h2>
-        </div>
-        <div class="card-content">
-            <div class="media-container">
-                <img src="https://images.unsplash.com/photo-1551288049-bbda4833effb?auto=format&fit=crop&w=800" alt="Stats">
+            <div class="card" onclick="openModal('stats-modal')">
+                <span class="icon">📊</span>
+                <h3>3. Statistiques</h3>
+                <p>Performances et Rapidité.</p>
             </div>
-            <p>Analyse des performances de l'IA générative en 2026 :</p>
-            <div class="stats-row">
-                <div class="stat-item"><strong>Rapidité :</strong> 95%</div>
-                <div class="stat-item"><strong>Fiabilité :</strong> 60%</div>
-            </div>
-            <div class="video-box">
-                <iframe src="https://www.youtube.com/embed/S_8qM9vL7iQ" frameborder="0" allowfullscreen></iframe>
-            </div>
-        </div>
-    </div>
 
-    <div class="card" onclick="toggleCard(this)">
-        <div class="card-header">
-            <span class="icon">📚</span>
-            <h2>Ressources</h2>
-        </div>
-        <div class="card-content">
-            <p>Retrouvez les articles du Monde, lebigdata.fr et les podcasts de Radio France cités dans l'exposé.</p>
-            <div class="media-container">
-                <img src="https://images.unsplash.com/photo-1507842217343-583bb7270b66?auto=format&fit=crop&w=800" alt="Logo SNT">
+            <div class="card" onclick="openModal('enjeux-modal')">
+                <span class="icon">🛡️</span>
+                <h3>4. Dangers & Éthique</h3>
+                <p>Confidentialité et Biais.</p>
+            </div>
+
+            <div class="card" onclick="openModal('ressources-modal')">
+                <span class="icon">📚</span>
+                <h3>5. Ressources</h3>
+                <p>Sources et Médias.</p>
+            </div>
+
+            <div class="card" onclick="openModal('quiz-modal')">
+                <span class="icon">❓</span>
+                <h3>Quiz IA</h3>
+                <p>Testez-vous !</p>
+            </div>
+        </section>
+
+        <div id="presentation-modal" class="modal">
+            <div class="modal-content">
+                <span class="close" onclick="closeModal('presentation-modal')">&times;</span>
+                <h2>1. Présentation</h2>
+                <div class="detail-body">
+                    <p>ChatGPT, tout le monde en parle depuis fin 2022. L'accès au grand public de cet agent conversationnel, qui semble avoir réponse à tout, marque un nouveau pas dans les progrès de l'intelligence artificielle (IA) et pose énormément de questions. Mais qu'est-ce que réellement ChatGPT ? Comment fonctionne cette IA ? Comment peut-on l'utiliser intelligemment ? Faut-il s'en méfier ? Autant de questions sur lesquelles se pencher pour cet exposé !</p>
+                    <p><strong>Consignes :</strong> Vous travaillerez en trinôme. Un diaporama est à préparer et une présentation orale d'environ 10 minutes est attendue.</p>
+                    <h3>Analyse des réponses</h3>
+                    <p>Peut-il répondre à tout ? Des réponses parfois impressionnantes… mais parfois complètement fausses (hallucinations). Le fait que l'IA puisse inventer des faits avec une assurance totale.</p>
+                    <p><strong>L'Art du "Prompting" :</strong> C’est le thème central. Pour que ChatGPT soit efficace, il faut comprendre comment lui parler (Le Rôle, Le Contexte, Les Contraintes).</p>
+                </div>
             </div>
         </div>
-    </div>
 
-    <div class="card" onclick="toggleCard(this)">
-        <div class="card-header">
-            <span class="icon">❓</span>
-            <h2>Quiz IA</h2>
-        </div>
-        <div class="card-content" onclick="event.stopPropagation()">
-            <div id="quiz-container">
-                <p id="question">Cliquez pour commencer le quiz</p>
-                <div id="options"></div>
-                <p id="score-text"></p>
+        <div id="archi-modal" class="modal">
+            <div class="modal-content">
+                <span class="close" onclick="closeModal('archi-modal')">&times;</span>
+                <h2>2. Fonctionnement technique</h2>
+                <div class="detail-body">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/91/Transformer_full.png/500px-Transformer_full.png" alt="Architecture Transformer" class="modal-img">
+                    <p>ChatGPT est un agent conversationnel créé par OpenAI. Contrairement à un moteur de recherche, il ne cherche pas d'infos, il les génère.</p>
+                    <ul>
+                        <li><strong>LLM (Large Language Model) :</strong> Entraîné sur des milliards de phrases du web et de livres.</li>
+                        <li><strong>Probabilité Statistique :</strong> Il ne comprend pas le sens, il prédit le mot suivant le plus probable.</li>
+                        <li><strong>Infrastructure :</strong> Fonctionne sur des supercalculateurs Microsoft Azure avec des puces NVIDIA H100.</li>
+                        <li><strong>Données :</strong> Entraînement assisté par les humains, le modèle prédit des mots.</li>
+                        <li><strong>Fenêtre de Contexte :</strong> Sa capacité à se souvenir du début de votre conversation actuelle.</li>
+                    </ul>
+                    <div class="video-container">
+                        <iframe src="https://www.youtube.com/embed/7ell8KEbhJo" frameborder="0" allowfullscreen></iframe>
+                    </div>
+                </div>
             </div>
         </div>
-    </div>
-</main>
 
-<script src="script.js"></script>
+        <div id="stats-modal" class="modal">
+            <div class="modal-content">
+                <span class="close" onclick="closeModal('stats-modal')">&times;</span>
+                <h2>3. Statistiques & Performances</h2>
+                <div class="detail-body">
+                    <p>Analyse des performances de l'IA générative en 2026 :</p>
+                    <div class="stats-row" style="display: flex; justify-content: space-around; background: #444; padding: 10px; border-radius: 10px;">
+                        <div><strong>Rapidité :</strong> 95%</div>
+                        <div><strong>Fiabilité :</strong> 60%</div>
+                    </div>
+                    <p>Points Forts : Rédaction rapide, Traduction, Aide au code. Points Faibles : Vérité des faits, Logique mathématique complexe.</p>
+                    <div class="video-container">
+                        <iframe src="https://www.youtube.com/embed/S_8qM9vL7iQ" frameborder="0" allowfullscreen></iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="enjeux-modal" class="modal">
+            <div class="modal-content">
+                <span class="close" onclick="closeModal('enjeux-modal')">&times;</span>
+                <h2>4. Dangers & Éthique</h2>
+                <div class="detail-body">
+                    <ul>
+                        <li><strong>Confidentialité :</strong> Ne jamais partager de données sensibles ou personnelles.</li>
+                        <li><strong>Biais :</strong> Le modèle peut refléter les préjugés présents dans les textes d'entraînement.</li>
+                        <li><strong>Manipulations :</strong> Des possibles manipulations, fausses informations, la porte ouverte à la cybercriminalité ?</li>
+                    </ul>
+                    <p>Analyse de l'évolution des secteurs professionnels et l'impact sur les métiers.</p>
+                </div>
+            </div>
+        </div>
+
+        <div id="ressources-modal" class="modal">
+            <div class="modal-content">
+                <span class="close" onclick="closeModal('ressources-modal')">&times;</span>
+                <h2>5. Ressources</h2>
+                <div class="detail-body">
+                    <p><strong>Ressources en ligne :</strong> Article lebigdata.fr (INSEE), Article lemonde.fr (Pixels), Article eductive.ca.</p>
+                    <p><strong>Presse papier :</strong> Dossier Epsiloon n°25 (juillet 2023), article Télérama n°3816.</p>
+                    <p><strong>Podcast :</strong> ChatGPT : les nouveaux enjeux de l’IA (Radio France).</p>
+                    <p><strong>Vidéos :</strong> "Comment fonctionne ChatGPT ?" (INRIA) et "Ce qui se cache derrière ChatGPT" (ScienceEtonnante).</p>
+                </div>
+            </div>
+        </div>
+
+        <div id="quiz-modal" class="modal">
+            <div class="modal-content">
+                <span class="close" onclick="closeModal('quiz-modal')">&times;</span>
+                <h2>Quiz IA</h2>
+                <div id="quiz-area">
+                    <p id="question">Cliquez sur une option pour commencer</p>
+                    <div id="options"></div>
+                    <p id="score-text"></p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="script.js"></script>
 </body>
 </html>
