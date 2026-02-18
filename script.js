@@ -1,16 +1,36 @@
-// Fonction pour ouvrir/fermer les rectangles
-function toggleCard(element) {
-    const allCards = document.querySelectorAll('.card');
-    allCards.forEach(c => {
-        if(c !== element) c.classList.remove('active');
-    });
-    element.classList.toggle('active');
+function openModal(modalId) {
+    const modal = document.getElementById(modalId);
+    if (modal) {
+        modal.style.display = "block";
+        document.body.style.overflow = "hidden";
+        if(modalId === 'quiz-modal') runQuiz();
+    }
 }
 
-// Système de Quiz
+function closeModal(modalId) {
+    const modal = document.getElementById(modalId);
+    if (modal) {
+        modal.style.display = "none";
+        document.body.style.overflow = "auto";
+        const iframes = modal.querySelectorAll('iframe');
+        iframes.forEach(iframe => { iframe.src = iframe.src; });
+    }
+}
+
+window.onclick = function(event) {
+    if (event.target.classList.contains('modal')) {
+        const modals = document.querySelectorAll('.modal');
+        modals.forEach(m => {
+            m.style.display = "none";
+            document.body.style.overflow = "auto";
+        });
+    }
+};
+
+// QUIZ LOGIQUE
 const quizData = [
     { q: "Qui a créé ChatGPT ?", a: ["OpenAI", "Google"], c: 0 },
-    { q: "L'IA peut-elle mentir ?", a: ["Oui (hallucinations)", "Non jamais"], c: 0 }
+    { q: "L'IA peut-elle mentir ?", a: ["Oui (hallucinations)", "Non"], c: 0 }
 ];
 
 let cur = 0;
@@ -19,13 +39,12 @@ let score = 0;
 function runQuiz() {
     const qEl = document.getElementById("question");
     const oEl = document.getElementById("options");
+    const sEl = document.getElementById("score-text");
 
-    if(!qEl || !oEl) return;
-
-    if(cur >= quizData.length) {
+    if (cur >= quizData.length) {
         qEl.innerText = "Quiz fini !";
         oEl.innerHTML = "";
-        document.getElementById("score-text").innerText = `Score : ${score}/${quizData.length}`;
+        sEl.innerText = `Score : ${score} / ${quizData.length}`;
         return;
     }
 
@@ -34,17 +53,14 @@ function runQuiz() {
     oEl.innerHTML = "";
 
     d.a.forEach((opt, i) => {
-        const b = document.createElement("button");
-        b.innerText = opt;
-        b.className = "quiz-btn";
-        b.onclick = (e) => {
-            e.stopPropagation(); // Empêche de fermer la carte au clic
-            if(i === d.c) score++;
+        const btn = document.createElement("button");
+        btn.innerText = opt;
+        btn.className = "quiz-btn";
+        btn.onclick = () => {
+            if (i === d.c) score++;
             cur++;
             runQuiz();
         };
-        oEl.appendChild(b);
+        oEl.appendChild(btn);
     });
 }
-
-document.addEventListener("DOMContentLoaded", runQuiz);
