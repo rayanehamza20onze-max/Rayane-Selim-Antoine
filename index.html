@@ -19,47 +19,52 @@
             <div class="card" onclick="openModal('pres-modal')">
                 <span class="icon">📝</span>
                 <h3>1. Présentation</h3>
-                <p>Introduction et Consignes</p>
+                <p>L'agent conversationnel d'OpenAI</p>
             </div>
 
             <div class="card" onclick="openModal('tech-modal')">
                 <span class="icon">⚙️</span>
-                <h3>2. Fonctionnement technique</h3>
-                <p>LLM, Hardware et Probabilités</p>
+                <h3>2. Fonctionnement</h3>
+                <p>Infrastructure et Statistique</p>
             </div>
 
-            <div class="card" onclick="openModal('rep-modal')">
+            <div class="card" onclick="openModal('limites-modal')">
                 <span class="icon">🔍</span>
-                <h3>3. Analyse des réponses</h3>
-                <p>Prompting et Hallucinations</p>
+                <h3>3. Limites & Prompting</h3>
+                <p>Hallucinations et Maîtrise</p>
             </div>
 
-            <div class="card" onclick="openModal('ethique-modal')">
+            <div class="card" onclick="openModal('enjeux-modal')">
                 <span class="icon">🛡️</span>
-                <h3>4. Les dangers et l'Éthique</h3>
-                <p>Confidentialité et Biais</p>
+                <h3>4. Enjeux & Éthique</h3>
+                <p>Société et Environnement</p>
             </div>
 
             <div class="card" onclick="openModal('ressources-modal')">
                 <span class="icon">📚</span>
-                <h3>5. Ressources principales</h3>
-                <p>Articles, Presse et Vidéos</p>
+                <h3>5. Ressources</h3>
+                <p>Sources de l'exposé</p>
             </div>
 
             <div class="card" onclick="openModal('quiz-modal')">
                 <span class="icon">❓</span>
-                <h3>Quiz IA</h3>
-                <p>Testez-vous !</p>
+                <h3>Quiz Interactif</h3>
+                <p>Testez vos connaissances</p>
             </div>
         </section>
 
         <div id="pres-modal" class="modal">
             <div class="modal-content">
                 <span class="close" onclick="closeModal('pres-modal')">&times;</span>
-                <h2>1. Présentation</h2>
+                <h2>1. Présentation de la Révolution</h2>
                 <div class="detail-body">
-                    <p>ChatGPT, tout le monde en parle depuis fin 2022. L'accès au grand public de cet agent conversationnel, qui semble avoir réponse à tout, marque un nouveau pas dans les progrès de l'intelligence artificielle (IA) et pose énormément de questions. Mais qu'est-ce que réellement ChatGPT ? Comment fonctionne cette IA ? Comment peut-on l'utiliser intelligemment ? Faut-il s'en méfier ? Autant de questions sur lesquelles se pencher pour cet exposé !</p>
-                    <p><strong>Consignes :</strong> Vous travaillerez en trinôme. Un diaporama est à préparer et une présentation orale d'environ 10 minutes est attendue.</p>
+                    <img src="https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&w=800" class="modal-img" alt="IA">
+                    <p>ChatGPT, tout le monde en parle depuis fin 2022. L'accès au grand public de cet agent conversationnel, qui semble avoir réponse à tout, marque un nouveau pas dans les progrès de l'intelligence artificielle (IA) et pose énormément de questions.</p>
+                    <p>Développé par la société OpenAI sous l'impulsion de Sam Altman, ChatGPT n'est pas un moteur de recherche mais un modèle de langage révolutionnaire. Comprendre ce qui se cache derrière l'écran est indispensable pour utiliser cette révolution de manière responsable.</p>
+                    <div class="video-container">
+                        <iframe src="https://www.youtube.com/embed/ORp_S62I5S8" frameborder="0" allowfullscreen></iframe>
+                    </div>
+                    <a href="https://openai.com/chatgpt" target="_blank" class="modal-link">Découvrir OpenAI</a>
                 </div>
             </div>
         </div>
@@ -67,42 +72,45 @@
         <div id="tech-modal" class="modal">
             <div class="modal-content">
                 <span class="close" onclick="closeModal('tech-modal')">&times;</span>
-                <h2>2. Le fonctionnement technique</h2>
+                <h2>2. Fonctionnement technique</h2>
                 <div class="detail-body">
-                    <p>ChatGPT est un agent conversationnel créé par OpenAI. Contrairement à un moteur de recherche, il ne cherche pas d'infos, il les génère.</p>
-                    <ul>
-                        <li><strong>LLM (Large Language Model) :</strong> Entraîné sur des milliards de phrases de mots et de livres.</li>
-                        <li><strong>Probabilité Statistique :</strong> Il ne comprend pas le sens, il prédit le mot suivant le plus probable.</li>
-                        <li><strong>Infrastructure :</strong> Fonctionne sur des supercalculateurs Microsoft Azure avec des puces NVIDIA H100.</li>
-                        <li><strong>Données :</strong> Entraînement assisté par les humains, le modèle prédit des mots.</li>
-                        <li><strong>Fenêtre de Contexte :</strong> Sa capacité à se souvenir du début de votre conversation actuelle.</li>
-                    </ul>
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/91/Transformer_full.png/500px-Transformer_full.png" class="modal-img" alt="Transformer Architecture">
+                    <p>Son fonctionnement repose sur la prédiction statistique du mot suivant, un processus rendu possible par un entraînement massif sur des serveurs géants. Cette infrastructure invisible s'appuie sur des milliers de GPU (processeurs graphiques) ultra-puissants hébergés dans des data centers gourmands en énergie.</p>
+                    <p>Pour affiner ses réponses et garantir une certaine sécurité, l'IA bénéficie d'un entraînement assisté par des humains qui évaluent la pertinence de ses propos.</p>
+                    <div class="video-container">
+                        <iframe src="https://www.youtube.com/embed/7ell8KEbhJo" frameborder="0" allowfullscreen></iframe>
+                    </div>
+                    <a href="https://lebigdata.fr" target="_blank" class="modal-link">Article technique</a>
                 </div>
             </div>
         </div>
 
-        <div id="rep-modal" class="modal">
+        <div id="limites-modal" class="modal">
             <div class="modal-content">
-                <span class="close" onclick="closeModal('rep-modal')">&times;</span>
-                <h2>3. Analyse des réponses</h2>
+                <span class="close" onclick="closeModal('limites-modal')">&times;</span>
+                <h2>3. Limites et Prompting</h2>
                 <div class="detail-body">
-                    <p>Peut-il répondre à tout ? Des réponses parfois impressionnantes… mais parfois complètement fausses (hallucinations). Le fait que l'IA puisse inventer des faits avec une assurance totale.</p>
-                    <p><strong>L'Art du "Prompting" :</strong> C'est le thème central. Pour que ChatGPT soit efficace, il faut comprendre comment lui parler (Le Rôle, Le Contexte, Les Contraintes).</p>
+                    <img src="https://images.unsplash.com/photo-1684369175833-30472493390c?auto=format&fit=crop&w=800" class="modal-img" alt="Prompting">
+                    <p>L'outil possède des limites majeures, notamment les "hallucinations" où il invente des faits avec une assurance totale. L'art du "prompting" devient alors une compétence essentielle pour piloter l'IA avec précision et esprit critique.</p>
+                    <p>Pour les élèves, l'enjeu est de dépasser la simple triche pour en faire un assistant capable de reformuler des concepts ou de structurer des idées complexes.</p>
+                    <div class="video-container">
+                        <iframe src="https://www.youtube.com/embed/RKtR-lSOq2g" frameborder="0" allowfullscreen></iframe>
+                    </div>
                 </div>
             </div>
         </div>
 
-        <div id="ethique-modal" class="modal">
+        <div id="enjeux-modal" class="modal">
             <div class="modal-content">
-                <span class="close" onclick="closeModal('ethique-modal')">&times;</span>
-                <h2>4. Les dangers et l'Éthique</h2>
+                <span class="close" onclick="closeModal('enjeux-modal')">&times;</span>
+                <h2>4. Enjeux Éthiques et Futur</h2>
                 <div class="detail-body">
-                    <ul>
-                        <li><strong>Confidentialité :</strong> Ne jamais partager de données sensibles ou personnelles.</li>
-                        <li><strong>Biais :</strong> Le modèle peut refléter les préjugés présents dans les textes d'entraînement.</li>
-                        <li><strong>Manipulations :</strong> Des possibles manipulations, fausses informations, la porte ouverte à la cybercriminalité ?</li>
-                        <li><strong>Métiers :</strong> Analyse de l'évolution des secteurs professionnels.</li>
-                    </ul>
+                    <img src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&w=800" class="modal-img" alt="Cyber">
+                    <p>Cette technologie transforme déjà de nombreux métiers tout en facilitant malheureusement certaines dérives comme la cybercriminalité ou la désinformation massive.</p>
+                    <p>Enfin, l'utilisation de ChatGPT pose des questions éthiques et environnementales cruciales que chaque utilisateur doit avoir en tête. Il est important d'avoir un esprit critique face à ces outils.</p>
+                    <div class="video-container">
+                        <iframe src="https://www.youtube.com/embed/S_8qM9vL7iQ" frameborder="0" allowfullscreen></iframe>
+                    </div>
                 </div>
             </div>
         </div>
@@ -110,12 +118,12 @@
         <div id="ressources-modal" class="modal">
             <div class="modal-content">
                 <span class="close" onclick="closeModal('ressources-modal')">&times;</span>
-                <h2>5. Ressources principales</h2>
+                <h2>5. Sources & Ressources</h2>
                 <div class="detail-body">
                     <p><strong>Ressources en ligne :</strong> Article lebigdata.fr (INSEE), Article lemonde.fr (Pixels), Article eductive.ca.</p>
                     <p><strong>Presse papier :</strong> Dossier Epsiloon n°25 (juillet 2023), article Télérama n°3816.</p>
-                    <p><strong>Podcast :</strong> ChatGPT : les nouveaux enjeux de l’IA (Radio France).</p>
-                    <p><strong>Vidéos :</strong> "Comment fonctionne ChatGPT ?" (INRIA) et "Ce qui se cache derrière ChatGPT" (ScienceEtonnante).</p>
+                    <p><strong>Audio/Vidéo :</strong> Podcast Radio France, Vidéos ScienceEtonnante et INRIA Flowers.</p>
+                    <a href="https://www.radiofrance.fr" target="_blank" class="modal-link">Écouter le Podcast</a>
                 </div>
             </div>
         </div>
