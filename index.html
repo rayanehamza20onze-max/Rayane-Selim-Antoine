@@ -3,55 +3,110 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Exposé SNT - La Révolution ChatGPT</title>
+    <title>La Révolution ChatGPT - Projet SNT</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
 <header class="hero">
     <h1>La Révolution ChatGPT</h1>
-    <p>Cliquez sur un rectangle pour afficher le contenu en plein écran</p>
+    <p>Cliquez sur un rectangle pour explorer le contenu</p>
 </header>
 
 <main class="container">
-    <div class="card" onclick="openModal('presentation')">
-        <span class="icon">📝</span>
-        <h2>1. Présentation</h2>
-        <p>Introduction, Consignes et Analyse</p>
+    <div class="card" onclick="toggleCard(this)">
+        <div class="card-header">
+            <span class="icon">📝</span>
+            <h2>Présentation</h2>
+        </div>
+        <div class="card-content">
+            <div class="media-container">
+                <img src="https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&w=800" alt="IA Concept">
+            </div>
+            <p>ChatGPT, tout le monde en parle depuis fin 2022. L'accès au grand public de cet agent conversationnel, qui semble avoir réponse à tout, marque un nouveau pas dans les progrès de l'IA et pose énormément de questions.</p>
+            <p><strong>Consignes :</strong> Travail en trinôme. Diaporama et présentation orale de 10 min attendus.</p>
+            <h3>Analyse des réponses</h3>
+            <p>Peut-il répondre à tout ? Attention aux hallucinations (faits inventés avec assurance). L'Art du "Prompting" est central : Rôle, Contexte, Contraintes.</p>
+            <h3>Dangers et Éthique</h3>
+            <p>Confidentialité, Biais et Manipulations (cybercriminalité). Analyse de l'évolution des métiers.</p>
+            <div class="video-box">
+                <iframe src="https://www.youtube.com/embed/ORp_S62I5S8" frameborder="0" allowfullscreen></iframe>
+            </div>
+        </div>
     </div>
 
-    <div class="card" onclick="openModal('fonctionnement')">
-        <span class="icon">⚙️</span>
-        <h2>2. Fonctionnement</h2>
-        <p>Technique, LLM et Infrastructure</p>
+    <div class="card" onclick="toggleCard(this)">
+        <div class="card-header">
+            <span class="icon">⚙️</span>
+            <h2>Fonctionnement</h2>
+        </div>
+        <div class="card-content">
+            <div class="media-container">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/91/Transformer_full.png/800px-Transformer_full.png" alt="Architecture Transformer">
+            </div>
+            <p>ChatGPT est créé par OpenAI. Il ne cherche pas d'infos, il les génère.</p>
+            <ul>
+                <li><strong>LLM :</strong> Entraîné sur des milliards de phrases.</li>
+                <li><strong>Probabilité Statistique :</strong> Prédit le mot suivant le plus probable.</li>
+                <li><strong>Infrastructure :</strong> Supercalculateurs Azure et puces NVIDIA H100.</li>
+                <li><strong>Fenêtre de Contexte :</strong> Capacité à se souvenir du début de la conversation.</li>
+            </ul>
+            <div class="video-box">
+                <iframe src="https://www.youtube.com/embed/7ell8KEbhJo" frameborder="0" allowfullscreen></iframe>
+            </div>
+        </div>
     </div>
 
-    <div class="card" onclick="openModal('statistiques')">
-        <span class="icon">📊</span>
-        <h2>3. Statistiques</h2>
-        <p>Points forts et points faibles</p>
+    <div class="card" onclick="toggleCard(this)">
+        <div class="card-header">
+            <span class="icon">📊</span>
+            <h2>Statistiques</h2>
+        </div>
+        <div class="card-content">
+            <div class="media-container">
+                <img src="https://images.unsplash.com/photo-1551288049-bbda4833effb?auto=format&fit=crop&w=800" alt="Statistiques">
+            </div>
+            <p>Analyse des performances de l'IA générative :</p>
+            <div class="stats-row">
+                <div class="stat-item"><strong>Rapidité :</strong> 95%</div>
+                <div class="stat-item"><strong>Fiabilité :</strong> 60%</div>
+            </div>
+            <p>Croissance record : 100 millions d'utilisateurs en 2 mois.</p>
+            <div class="video-box">
+                <iframe src="https://www.youtube.com/embed/S_8qM9vL7iQ" frameborder="0" allowfullscreen></iframe>
+            </div>
+        </div>
     </div>
 
-    <div class="card" onclick="openModal('ressources')">
-        <span class="icon">📚</span>
-        <h2>4. Ressources</h2>
-        <p>Sources, Médias et Vidéos</p>
+    <div class="card" onclick="toggleCard(this)">
+        <div class="card-header">
+            <span class="icon">📚</span>
+            <h2>Ressources</h2>
+        </div>
+        <div class="card-content">
+            <p>Retrouvez les articles du Monde, lebigdata.fr et les podcasts de Radio France.</p>
+            <p><strong>Presse :</strong> Epsiloon n°25, Télérama n°3816.</p>
+            <p><strong>Vidéos :</strong> ScienceEtonnante et INRIA Flowers.</p>
+            <div class="media-container">
+                <img src="https://images.unsplash.com/photo-1507842217343-583bb7270b66?auto=format&fit=crop&w=800" alt="Livres">
+            </div>
+        </div>
     </div>
 
-    <div class="card" onclick="openModal('quiz')">
-        <span class="icon">❓</span>
-        <h2>5. Quiz IA</h2>
-        <p>Testez vos connaissances</p>
+    <div class="card" onclick="toggleCard(this)">
+        <div class="card-header">
+            <span class="icon">❓</span>
+            <h2>Quiz IA</h2>
+        </div>
+        <div class="card-content" onclick="event.stopPropagation()">
+            <div id="quiz-container">
+                <p id="question">Cliquez pour commencer le quiz</p>
+                <div id="options"></div>
+                <p id="score-text"></p>
+            </div>
+        </div>
     </div>
 </main>
-
-<div id="fullScreenModal" class="modal">
-    <div class="modal-header">
-        <button class="close-btn" onclick="closeModal()">&times; FERMER</button>
-    </div>
-    <div class="modal-content" id="modal-body">
-        </div>
-</div>
 
 <script src="script.js"></script>
 </body>
